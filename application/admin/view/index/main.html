@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>集光智联-后台管理系统</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="__ADMIN_CSS__/font.css">
+    <link rel="stylesheet" href="__ADMIN_CSS__/xadmin.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="__ADMIN_LIB__/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="__ADMIN_JS__/xadmin.js"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        #editor{
+            width: 80%;
+            margin-left: 20px;
+        }
+        .layui-form-label{
+            width: 100px;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="x-body">
+    <form class="layui-form" method="post" enctype="multipart/form-data">
+        <!--活动图片-->
+
+        <div class="layui-form-item">
+            <label  class="layui-form-label">缩略图
+            </label>
+            <img id="LAY_demo_upload" width="400"  height="200" src="__BASE_URL__/{$data.actUrl}">
+        </div>
+        <div class="layui-form-item">
+            <label  class="layui-form-label">
+            </label>
+            （由于服务器资源有限，所以此处每次给你返回的是同一张图片)
+        </div>
+
+        <div class="layui-form-item">
+
+            <label for="phone" class="layui-form-label">
+                <span class="x-red">*</span>图片修改
+            </label>
+
+            <button type="button" class="layui-btn" id="test1">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+
+
+
+            <input type="hidden" id="arrId" name="arrId" >   <!-- 隐藏域-->
+        </div>
+
+        <div class="layui-form-item">
+            <label for="name" class="layui-form-label">
+                <span class="x-red">*</span>活动名称
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="name" name="name" required="" lay-verify="required"
+                       autocomplete="off" class="layui-input" value="{$data.name}">
+            </div>
+        </div>
+        <div class="layui-form  layui-col-md12 x-so" >
+            <label for="start_time" class="layui-form-label">
+                <span class="x-red">*</span>活动时间
+            </label>
+            <div class="layui-input-inline">
+                <input class="layui-input" placeholder="活动时间" name="start" id="start" value="{$data.start_time}" >
+                <!--<input class="layui-input" placeholder="结束时间" name="end" id="end" >-->
+            </div>
+        </div>
+
+
+        <div class="layui-form-item">
+            <label for="type" class="layui-form-label">
+                <span class="x-red">*</span>活动类型
+            </label>
+            <div class="layui-input-inline">
+                <select id="type" name="type" class="valid" lay-filter="type">
+                    <option value="1">线上活动</option>
+                    <option value="2">线下活动</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item layui-hide" id="address-div">
+            <label for="act_address" class="layui-form-label">
+                <span class="x-red">*</span>活动地址
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="act_address" name="act_address"
+                       autocomplete="off" class="layui-input" value="{$data.act_address}">
+            </div>
+        </div>
+
+
+        <div class="layui-form-item">
+            <label for="is_need_money" class="layui-form-label">
+                <span class="x-red">*</span>活动是否收费
+            </label>
+            <div class="layui-input-inline">
+                <select id="is_need_money" name="is_need_money" class="valid" lay-filter="is_need_money">
+                    <option value="1">收费</option>
+                    <option value="2">不收</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="layui-form-item " id="money-div">
+            <label for="money" class="layui-form-label">
+                <span class="x-red">*</span>收费价格
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="money" name="money"
+                       autocomplete="off" class="layui-input" value="{$data.money}">
+            </div>
+        </div>
+
+
+
+        <div class="layui-form-item">
+            <label for="is_display" class="layui-form-label">
+                <span class="x-red">*</span>是否显示
+            </label>
+            <div class="layui-input-inline">
+                <input type="checkbox" name="is_display" id="is_display"  lay-text="显示|不显"  checked="" lay-skin="switch" lay-filter="is_display">
+            </div>
+        </div>
+
+
+
+
+
+                <div class="layui-form-item">
+                    <label for="L_repass" class="layui-form-label">
+                    </label>
+                    <button  class="layui-btn" lay-filter="add" lay-submit="">
+                    修改
+                    </button>
+                    </div>
+                    </form>
+                    </div>
+                    <script src="__ADMIN_JS__/jquery.min.js"></script>
+
+                <script>
+
+                    layui.use(['laydate','form','layer','upload'], function(){
+                        $ = layui.jquery;
+                        var laydate = layui.laydate;
+                        var form = layui.form
+                            ,layer = layui.layer;
+                        var upload = layui.upload;
+
+                        // 修改 的默认值
+                        var type = {$data.type};  var is_need_money = {$data.is_need_money}; var state = {$data.state};
+                        var is_display = {$data.is_display};
+                        if(type == 1)
+                        {
+                            $("#type").find("option[value='1']").prop("selected",true);
+                            form.render();
+                        }else {
+                            $("#type").find("option[value='2']").prop("selected",true);
+                            form.render();
+                        }
+                        if(is_need_money == 1)
+                        {
+                            // $("#is_need_money").prop("checked",true);
+                            $("#is_need_money").find("option[value='1']").prop("selected",true);
+                            form.render();
+                        }else {
+                            $("#is_need_money").find("option[value='2']").prop("selected",true);
+                            $('#money-div').addClass('layui-hide'); //不收费的话  隐藏money
+                            form.render();
+                        }
+
+                        if(state == 0)
+                        {
+                            $("#state").find("option[value='0']").prop("selected",true);
+                            form.render();
+                        }if( state == 1) {
+                            $("#type").find("option[value='1']").prop("selected",true);
+                            form.render();
+                        }else {
+                            $("#type").find("option[value='2']").prop("selected",true);
+                            form.render();
+                        }
+
+                        if(is_display == 1)
+                        {
+                            $("#is_display").prop("checked",true);
+                            form.render();
+                        }else {
+                            $("#is_display").prop("checked",false);
+                            form.render();
+                        }
+
+
+
+
+                        //执行一个laydate实例
+                        laydate.render({elem: '#start' });
+                        //执行一个laydate实例
+                        laydate.render({elem: '#end'});
+
+                        //文件上传
+                        var uploadInst = upload.render({
+                            elem: '#test1' //绑定元素
+                            ,url: "{:url('admin/activity/upload')}" //上传接口
+                            ,done: function(res){
+                                console.log(res);  //上传完毕回调
+                                if(res.code == 200)
+                                {
+                                    $('#arrId').val(res.data);
+                                }
+
+
+                            }
+                            ,error: function(){
+                                console.log(res)
+                                layer.msg(res.msg, {icon: 1});
+                            }
+                        });
+
+
+                        //监听复选框 -活动是否收费
+                        form.on('switch(is_need_money)', function(data){
+                            console.log(data.elem.checked); //开关是否开启，true或者false
+
+                            if(data.elem.checked == true)
+                            {
+                                $('#money-div').removeClass('layui-hide');
+                            }else {
+                                $('#money-div').addClass('layui-hide');
+                            }
+
+                        });
+                        //监听复选框 - 活动是否是线下活动
+                        form.on('select(type)', function(data){
+                            console.log(data.value); //开关是否开启，true或者false
+
+                            if(data.value == 2)
+                            {
+                                $('#address-div').removeClass('layui-hide');
+                            }else {
+                                $('#address-div').addClass('layui-hide');
+                            }
+
+                        });
+
+                        //监听提交
+                        form.on('submit(add)', function(data){
+                            console.log(data);
+                            //发异步，把数据提交给php
+                            var id = {$data.id};
+                            var arr = data.field;
+
+
+                            $.ajax({
+                                url:'{:url("admin/activity/edit_go")}',
+                                type:'POST',
+                                data:{"data":arr, "id":id},
+
+                                success:function(data){
+                                    console.log(data)
+                                    if(data == 1){
+
+                                        layer.alert("修改成功", {icon: 6}, function ()
+                                        {
+                                            var index = parent.layer.getFrameIndex(window.name);  // 获得frame索引
+                                            parent.location.href="lists";
+                                            parent.layer.close(index); //关闭当前frame
+                                        });
+
+                                    }else{
+                                        layer.msg('修改失败', {icon: 1});
+
+                                    }
+                                }
+                            })
+
+                            return false;
+                        });
+                    });
+                </script>
+                <script>var _hmt = _hmt || []; (function() {
+                    var hm = document.createElement("script");
+                    hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(hm, s);
+                })();</script>
+</body>
+
+</html>
