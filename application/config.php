@@ -261,5 +261,15 @@ return [
 
     'base_url'=>[
         'url'=>'http://cc.com'
-    ]
+    ],
+    'mongodb_yun'=>[
+        'type'  =>  '\think\mongo\Connection',
+        'hostname' => '140.143.56.149',
+        'database' => 'lezhi', //数据库名
+        'username'=>'',
+        'password'=>'',
+        'charset' => 'utf8',
+        'prefix'  =>'',
+    ],
+
 ];

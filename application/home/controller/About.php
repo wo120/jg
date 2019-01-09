@@ -1,5 +1,5 @@
 <?php
-namespace app\home\controller;
+namespace app\admin\controller;
 
 use think\Db;
 use think\Request;
@@ -12,6 +12,8 @@ class About extends BaseController
     //关于长城
     public function index()
     {
+
+
         return $this->fetch();
     }
 

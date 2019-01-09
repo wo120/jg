@@ -18,6 +18,20 @@ class Index extends BaseController
         return $this->fetch();
     }
 
+    public function test()
+    {
+        $mongo = config('mongodb_yun');
+        $gsArr =  Db::connect($mongo)->table('table')->where('id',1)->select();
+        if(empty($gsArr))
+        {
+            $res = Db::connect($mongo)->table('table')->insert(['id'=>1,'num'=>1]);
+            return $res?1:0;
+        }
+
+
+
+    }
+
 
 
 
