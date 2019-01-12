@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\job\add.html";i:1546912606;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\job\add.html";i:1547178874;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -213,9 +213,15 @@
         //监听提交
         form.on('submit(add)', function(data){
             var dataArr = data.field;
+            var claim   = dataArr.claim;
+            var en_claim   = dataArr.en_claim;
+            claim    = claim.replace(/\n|\r\n/g,"<br>");
+            en_claim = en_claim.replace(/\n|\r\n/g,"<br>");
+            dataArr.claim = claim;
+            dataArr.en_claim = en_claim;
+
 
             console.log(dataArr);
-
             //发异步，把数据提交给php
 
                 $.ajax({

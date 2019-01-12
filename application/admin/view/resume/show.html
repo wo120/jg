@@ -108,7 +108,7 @@
     <fieldset class="layui-elem-field layui-field-title site-title">
         <legend><a name="templet">教育经历</a></legend>
     </fieldset>
-
+    <!--school_time  school major education-->
     <table class="layui-table" style="table-layout:fixed">
         <tr>
             <th>起止时间</th>
@@ -116,22 +116,24 @@
             <th>专业</th>
             <th>学历</th>
         </tr>
-        {volist name="$data.education_undergo" id="vo"}
+
+        {volist name="data.education_undergo" id="vo"}
         <tr>
-            <td>{$vo['起止时间']}</td>
-            <td>{$vo['毕业院校']}</td>
-            <td>{$vo['专业']}</td>
-            <td>{$vo['学历']}</td>
+            <td>{$vo['school_time']}</td>
+            <td>{$vo['school']}</td>
+            <td>{$vo['major']}</td>
+            <td>{$vo['education']}</td>
 
         </tr>
         {/volist}
+
     </table>
 
     <fieldset class="layui-elem-field layui-field-title site-title">
         <legend><a name="templet">  工作经历（按先近后远填最近三家）</a></legend>
     </fieldset>
     <table class="layui-table" style="table-layout:fixed">
-        {volist name=" $data.jobs_undergo" id="v"}
+        {volist name="data.jobs_undergo" id="v"}
         <tr>
             <th>起止时间</th>
             <th>公司名称</th>
@@ -139,9 +141,9 @@
             <th>月薪水平</th>
         </tr>
         <tr>
-            <td>{$v['time']}</td>
+            <td>{$v['gs_time']}</td>
             <td>{$v['gs_name']}</td>
-            <td>{$v['job']}</td>
+            <td>{$v['job_name']}</td>
             <td>{$v['money']}</td>
         </tr>
         <tr>
@@ -167,9 +169,9 @@
         </tr>
 
 
-        {volist name=" $data.award_record" id="val"}
+        {volist name="data.award_record" id="val"}
         <tr>
-            <td>{$val.time}</td>
+            <td>{$val.year}</td>
             <td>{$val.prize}</td>
             <td>{$val.name}</td>
         </tr>
@@ -187,12 +189,10 @@
         </tr>
 
 
-        {volist name=" $data.cert" id="$v1"}
         <tr>
-            <td>{$v1.time}</td>
-            <td>{$v1.prize}</td>
+            <td>{$data.cert}</td>
+            <td>{$data.skill}</td>
         </tr>
-        {/volist}
     </table>
 
 </div>

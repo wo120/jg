@@ -82,7 +82,7 @@
             <th >操作</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="x-img">
         {volist name='list' id='v'}
         <tr>
             <td>
@@ -128,8 +128,14 @@
 
 </div>
 <script>
-    layui.use('laydate', function(){
+    layui.use(['laydate','layer'] ,function(){
         var laydate = layui.laydate;
+        layer.ready(function(){ //为了layer.ext.js加载完毕再执行
+            layer.photos({
+                photos: '#x-img'
+                //,shift: 5 //0-6的选择，指定弹出图片动画类型，默认随机
+            });
+        });
 
         //执行一个laydate实例
         laydate.render({

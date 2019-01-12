@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\news\mt_news.html";i:1546672843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\news\mt_news.html";i:1547088747;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -83,7 +83,7 @@
             <th >操作</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="x-img">
         <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
         <tr>
             <td>
@@ -129,8 +129,14 @@
 
 </div>
 <script>
-    layui.use('laydate', function(){
+    layui.use(['laydate','layer'] ,function(){
         var laydate = layui.laydate;
+        layer.ready(function(){ //为了layer.ext.js加载完毕再执行
+            layer.photos({
+                photos: '#x-img'
+                //,shift: 5 //0-6的选择，指定弹出图片动画类型，默认随机
+            });
+        });
 
         //执行一个laydate实例
         laydate.render({

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\resume\show.html";i:1546846643;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\resume\show.html";i:1547197838;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -109,7 +109,7 @@
     <fieldset class="layui-elem-field layui-field-title site-title">
         <legend><a name="templet">教育经历</a></legend>
     </fieldset>
-
+    <!--school_time  school major education-->
     <table class="layui-table" style="table-layout:fixed">
         <tr>
             <th>起止时间</th>
@@ -117,15 +117,17 @@
             <th>专业</th>
             <th>学历</th>
         </tr>
+
         <?php if(is_array($data['education_undergo']) || $data['education_undergo'] instanceof \think\Collection || $data['education_undergo'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['education_undergo'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
         <tr>
-            <td><?php echo $vo['起止时间']; ?></td>
-            <td><?php echo $vo['毕业院校']; ?></td>
-            <td><?php echo $vo['专业']; ?></td>
-            <td><?php echo $vo['学历']; ?></td>
+            <td><?php echo $vo['school_time']; ?></td>
+            <td><?php echo $vo['school']; ?></td>
+            <td><?php echo $vo['major']; ?></td>
+            <td><?php echo $vo['education']; ?></td>
 
         </tr>
         <?php endforeach; endif; else: echo "" ;endif; ?>
+
     </table>
 
     <fieldset class="layui-elem-field layui-field-title site-title">
@@ -140,9 +142,9 @@
             <th>月薪水平</th>
         </tr>
         <tr>
-            <td><?php echo $v['time']; ?></td>
+            <td><?php echo $v['gs_time']; ?></td>
             <td><?php echo $v['gs_name']; ?></td>
-            <td><?php echo $v['job']; ?></td>
+            <td><?php echo $v['job_name']; ?></td>
             <td><?php echo $v['money']; ?></td>
         </tr>
         <tr>
@@ -170,7 +172,7 @@
 
         <?php if(is_array($data['award_record']) || $data['award_record'] instanceof \think\Collection || $data['award_record'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['award_record'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
         <tr>
-            <td><?php echo $val['time']; ?></td>
+            <td><?php echo $val['year']; ?></td>
             <td><?php echo $val['prize']; ?></td>
             <td><?php echo $val['name']; ?></td>
         </tr>
@@ -188,12 +190,10 @@
         </tr>
 
 
-        <?php if(is_array($data['cert']) || $data['cert'] instanceof \think\Collection || $data['cert'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['cert'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$$v1): $mod = ($i % 2 );++$i;?>
         <tr>
-            <td><?php echo $v1['time']; ?></td>
-            <td><?php echo $v1['prize']; ?></td>
+            <td><?php echo $data['cert']; ?></td>
+            <td><?php echo $data['skill']; ?></td>
         </tr>
-        <?php endforeach; endif; else: echo "" ;endif; ?>
     </table>
 
 </div>

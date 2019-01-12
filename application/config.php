@@ -145,12 +145,10 @@ return [
     
        'view_replace_str'       => [
         '__HOME_CSS__'  => '/static/home/css',
-        '__HOME_JS__'   => '/static/home/js',
-        '__HOME_LIB__'  => '/static/home/lib',
-        '__HOME_IMG__'  => '/static/home/img',
         '__HOME_VIEW__' => '/static/home/html',
-        '__HOME_ASSET__'=> '/static/home/asset',
-        '__IMG__'       =>  'https://www.wengwenglove.com',
+        '__HOME_STATIC__'=> '/static/home/static',
+
+
 
            '__ADMIN_CSS__' => '/static/admin/css',
            '__ADMIN_JS__'  => '/static/admin/js',
@@ -159,7 +157,7 @@ return [
            '__ADMIN_VIEW__' => '/static/admin/html',
            '__ADMIN_DIT__' => '/static/admin/ueditor',
 
-           '__BASE_URL__' => 'https://www.wengwenglove.com'
+           '__BASE_URL__' => 'http://cc.com'
 
     ],
     // 默认跳转页面对应的模板文件

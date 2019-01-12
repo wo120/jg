@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\index\index.html";i:1546649869;s:78:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\public\header.html";i:1541208864;s:76:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\public\left.html";i:1546865324;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\index\index.html";i:1547091092;s:78:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\public\header.html";i:1547090673;s:76:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\public\left.html";i:1547090591;}*/ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,19 +19,19 @@
 <body>
 <!-- 顶部开始 -->
 <div class="container">
-    <div class="logo"><a href="./index.html">乐智玩具-商城管理后台系统</a></div>
+    <div class="logo"><a href="./index.html">长城管理后台系统</a></div>
 <div class="left_open">
     <i title="展开左侧栏" class="iconfont">&#xe699;</i>
 </div>
 <ul class="layui-nav left fast-add" lay-filter="">
-    <li class="layui-nav-item">
-        <a href="javascript:;">+新增</a>
-        <dl class="layui-nav-child"> <!-- 二级菜单 -->
-            <dd><a onclick="x_admin_show('资讯','http://www.baidu.com')"><i class="iconfont">&#xe6a2;</i>资讯</a></dd>
-            <dd><a onclick="x_admin_show('图片','http://www.baidu.com')"><i class="iconfont">&#xe6a8;</i>图片</a></dd>
-            <dd><a onclick="x_admin_show('用户','http://www.baidu.com')"><i class="iconfont">&#xe6b8;</i>用户</a></dd>
-        </dl>
-    </li>
+    <!--<li class="layui-nav-item">-->
+        <!--<a href="javascript:;">+新增</a>-->
+        <!--<dl class="layui-nav-child"> &lt;!&ndash; 二级菜单 &ndash;&gt;-->
+            <!--<dd><a onclick="x_admin_show('资讯','http://www.baidu.com')"><i class="iconfont">&#xe6a2;</i>资讯</a></dd>-->
+            <!--<dd><a onclick="x_admin_show('图片','http://www.baidu.com')"><i class="iconfont">&#xe6a8;</i>图片</a></dd>-->
+            <!--<dd><a onclick="x_admin_show('用户','http://www.baidu.com')"><i class="iconfont">&#xe6b8;</i>用户</a></dd>-->
+        <!--</dl>-->
+    <!--</li>-->
 </ul>
 <ul class="layui-nav right" lay-filter="">
     <li class="layui-nav-item">
@@ -53,7 +53,7 @@
     <ul id="nav">
         <li>
             <a href="javascript:;">
-                <i class="iconfont">&#xe6f6;</i>
+                <i class="iconfont">&#xe6fb;</i>
                 <cite>新闻管理</cite>
                 <i class="iconfont nav_right">&#xe697;</i>
             </a>
@@ -137,6 +137,22 @@
             </ul>
         </li>
 
+        <li>
+            <a href="javascript:;">
+                <i class="iconfont">&#xe82a;</i>
+                <cite>企业文化管理</cite>
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a _href="<?php echo url('admin/culture/lists'); ?>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>企业文化列表</cite>
+                    </a>
+                </li >
+            </ul>
+        </li>
+
 
 
     </ul>
@@ -164,16 +180,6 @@
 <div class="footer">
     <!--<div class="copyright">Copyright ©2017 极光互联提供技术支持</div>-->
 </div>
-<!-- 底部结束 -->
-<script>
-    //百度统计可去掉
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
+
 </body>
 </html>

@@ -6,17 +6,22 @@ use think\Request;
 use think\Validate;
 use think\Session;
 use app\home\model\Resume as ResumeModel;
-//招聘
+//人力招聘
 class Resume extends BaseController
 {
 
     //1人才培养页面
-    public function job()
+    public function index()
     {
+        //查询全部招聘的岗位
+        $data = Db::table('job')->select();
+        $this->assign('data',$data);
+//dd($data);
         return $this->fetch();
     }
+
     //2岗位招聘页面
-    public function index()
+    public function job()
     {
         //查询全部招聘的岗位
         $data = Db::table('job')->select();
@@ -32,7 +37,9 @@ class Resume extends BaseController
         $id   = Request::instance()->get('id');
         $arr  = Db::table('job')->field('job_name')->where('id',$id)->find();
         $job_name = $arr['job_name'];
+        $time = date("Y年m月d日");
 
+        $this->assign('time',$time);
         $this->assign('job_name',$job_name);
         return $this->fetch();
     }
@@ -43,25 +50,54 @@ class Resume extends BaseController
     public function add()
     {
         $tmp   = Request::instance()->post();
+//        $requiredKey = ['nickname'=>'姓名','sex'=>'性别','birthplace'=>'籍贯','birth_date'=>'出生年月','email'=>'E-mail','phone'=>'手机号码'];
+
+        //1.验证参数
+        $rule = [
+            'nickname|姓名'    => ['require','chsAlpha','min' => 3, 'max' =>24,'token'], //汉字字母 防csrf攻击
+            'sex|性别'   => ['number','require','min' => 1, 'max' =>1,],
+            'birthplace|籍贯'        => ['chsAlphaNum','require','min' => 3, 'max' =>13],//汉字 字母 数字
+            'birth_date|出生年月' => ['chsAlphaNum','require','min' => 6, 'max' =>20], //汉字、字母、数字
+            'email|邮箱'        => ['email'],
+        ];
+        $messages = [
+            'nickname.require' => '用户的名称不能为空',
+            'nickname.min' => '用户的长度最少必须是3个字符',
+            'nickname.max' => '用户的长度最多必须是24个字符',
+            'birthplace'=>'籍贯格式错误',
+            'birth_date'=>'出生年月格式错误',
+        ];
+
+        $validate = new validate($rule, $messages);
+        $validate ->scene('message',['nickname','sex','birthplace','birth_date','email','phone']);
+        $res = $validate->scene('message')->check($tmp);
+        if(!$res)
+        {
+            //可以优化  return $validate->getError();
+            $this->error( $validate->getError());
+        }
+
 
         //判断哪个必填参数是否为空
         $required = ['nickname','sex','birthplace','birth_date','email','phone'];
+        $requiredKey = ['nickname'=>'姓名','sex'=>'性别','birthplace'=>'籍贯','birth_date'=>'出生年月','email'=>'E-mail','phone'=>'手机号码'];
         foreach ($tmp as $k =>$v)
         {
-            if(in_array($v,$required))
+            if(in_array($k,$required))
             {
                 if(empty($v))
                 {
-                    $this->error('参数'.$k.'不能为空');
+                    $this->error($requiredKey[$k].'不能为空');
                 }
             }
         }
 
-        $job_name   = Request::instance()->post('job_name');
-        $job_name   = $this->form_check($job_name);
+        $job_name   = Request::instance()->post('job_name_tmp');
+        $job_name_tmp = $this->form_check($job_name);
 
-        $time = Request::instance()->post('time');
-        $time   = $this->form_check($time);
+
+        $time = date("Y年m月d日"); ;
+
 
         $hope_year_salary = Request::instance()->post('hope_year_salary');
         $hope_year_salary   = $this->form_check($hope_year_salary);
@@ -102,20 +138,124 @@ class Resume extends BaseController
         $email = Request::instance()->post('email');
         $email   = $this->form_check($email);
 
-        $education_undergo = Request::instance()->post('education_undergo');
-        $education_undergo   = $this->form_check($education_undergo);
+//        school_time  school major education    起止时间 毕业院校 专业 学历
+        //教育经历
+        $school_time = Request::instance()->post('school_time');
+        $education_undergo [0]['school_time'] = $this->form_check($school_time);
 
-        $jobs_undergo = Request::instance()->post('jobs_undergo');
-        $jobs_undergo   = $this->form_check($jobs_undergo);
+        $school = Request::instance()->post('school');
+        $education_undergo [0]['school'] = $this->form_check($school);
 
-        $award_record = Request::instance()->post('award_record');
-        $award_record   = $this->form_check($award_record);
+        $major = Request::instance()->post('major');
+        $education_undergo [0]['major'] = $this->form_check($major);
+
+        $education = Request::instance()->post('education');
+        $education_undergo [0]['education'] = $this->form_check($education);
+
+
+        $school_time = Request::instance()->post('school_time2');
+        $education_undergo [1]['school_time']= $this->form_check($school_time);
+
+        $school = Request::instance()->post('school2');
+        $education_undergo [1]['school'] = $this->form_check($school);
+
+        $major = Request::instance()->post('major2');
+        $education_undergo [1]['major'] = $this->form_check($major);
+
+        $education = Request::instance()->post('education2');
+        $education_undergo [1]['education'] = $this->form_check($education);
+
+
+
+
+        $school_time = Request::instance()->post('school_time3');
+        $education_undergo [2]['school_time'] = $this->form_check($school_time);
+
+        $school = Request::instance()->post('school3');
+        $education_undergo [2]['school']  = $this->form_check($school);
+
+        $major = Request::instance()->post('major3');
+        $education_undergo [2]['major']  = $this->form_check($major);
+
+        $education = Request::instance()->post('education3');
+        $education_undergo [2]['education']  = $this->form_check($education);
+
+
+        $education_undergo = json_encode($education_undergo);
+
+        //工作经验
+//        起止时间  公司名称 所任岗位  月薪水平  gs_time gs_name  job_name money  suffer
+        $gs_time = Request::instance()->post('gs_time');
+        $jobs_undergo [0]['gs_time']  = $this->form_check($gs_time);
+        $gs_name = Request::instance()->post('gs_name');
+        $jobs_undergo [0]['gs_name'] = $this->form_check($gs_name);
+        $job_name = Request::instance()->post('job_name');
+        $jobs_undergo [0]['job_name'] = $this->form_check($job_name);
+        $money = Request::instance()->post('money');
+        $jobs_undergo [0]['money'] = $this->form_check($money);
+        $suffer = Request::instance()->post('suffer');
+        $jobs_undergo [0]['suffer'] = $this->form_check($suffer);
+
+
+        $gs_time = Request::instance()->post('gs_time2');
+        $jobs_undergo [1]['gs_time'] = $this->form_check($gs_time);
+        $gs_name = Request::instance()->post('gs_name2');
+        $jobs_undergo [1]['gs_name'] = $this->form_check($gs_name);
+        $job_name = Request::instance()->post('job_name2');
+        $jobs_undergo [1]['job_name'] = $this->form_check($job_name);
+        $money = Request::instance()->post('money2');
+        $jobs_undergo [1]['money'] = $this->form_check($money);
+        $suffer = Request::instance()->post('suffer2');
+        $jobs_undergo [1]['suffer'] = $this->form_check($suffer);
+
+        $gs_time = Request::instance()->post('gs_time3');
+        $jobs_undergo [2]['gs_time'] = $this->form_check($gs_time);
+        $gs_name = Request::instance()->post('gs_name3');
+        $jobs_undergo [2]['gs_name']  = $this->form_check($gs_name);
+        $job_name = Request::instance()->post('job_name3');
+        $jobs_undergo [2]['job_name']  = $this->form_check($job_name);
+        $money = Request::instance()->post('money3');
+        $jobs_undergo [2]['money']  = $this->form_check($money);
+        $suffer = Request::instance()->post('suffer3');
+        $jobs_undergo [2]['suffer']  = $this->form_check($suffer);
+
+        $jobs_undergo = json_encode($jobs_undergo);
+
+        //获奖记录  year prize name
+        $year = Request::instance()->post('year');
+        $award_record [0]['year'] = $this->form_check($year);
+        $prize = Request::instance()->post('prize');
+        $award_record [0]['prize'] = $this->form_check($prize);
+        $name = Request::instance()->post('name');
+        $award_record [0]['name'] = $this->form_check($name);
+
+
+        $year = Request::instance()->post('year2');
+        $award_record [1]['year'] = $this->form_check($year);
+        $prize = Request::instance()->post('prize2');
+        $award_record [1]['prize']  = $this->form_check($prize);
+        $name = Request::instance()->post('name2');
+        $award_record [1]['name']  = $this->form_check($name);
+
+        $year = Request::instance()->post('year3');
+        $award_record [2]['year']  = $this->form_check($year);
+        $prize = Request::instance()->post('prize3');
+        $award_record [2]['prize']   = $this->form_check($prize);
+        $name = Request::instance()->post('name3');
+        $award_record [2]['name']   = $this->form_check($name);
+
+
+        $job_name = $job_name_tmp;
+
+        $award_record = json_encode($award_record);
 
         $cert = Request::instance()->post('cert');
         $cert   = $this->form_check($cert);
 
         $skill = Request::instance()->post('skill');
         $skill   = $this->form_check($skill);
+
+
 
         $data = compact('job_name','time','nickname','hope_year_salary','height','sex','birthplace','nation','birth_date','marriage','job_title','political',
             'phone','tall','email','education_undergo','jobs_undergo','award_record','cert','skill');

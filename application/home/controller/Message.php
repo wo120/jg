@@ -26,13 +26,13 @@ class Message extends BaseController
         $rule = [
             'gs_name|公司名称' => ['require','min' => 3, 'max' =>60,'token'],   //防csrf攻击
             'nickname|昵称'    => ['require','chsAlpha','min' => 3, 'max' =>24], //汉字字母
-            'phone|手机号码'   => ['mobile','require','min' => 10, 'max' =>14,],
+            'phone|手机号码'   => ['number','require','min' => 11, 'max' =>11,],
             'qq|QQ号码'        => ['number','min' => 6, 'max' =>15],
             'title|主题'        => ['chsAlphaNum','require','min' => 3, 'max' =>13],//汉字 字母 数字
-            'content|留言内容' => ['chsDash','require','min' => 18, 'max' =>600], //汉字、字母、数字和下划线_及破折号-
+            'content|留言内容' => ['chsDash','require','min' => 6, 'max' =>600], //汉字、字母、数字和下划线_及破折号-
         ];
         $messages = [
-            'gs_name.require' => '用户的名称不能为空',
+            'gs_name.require' => '公司名称不能为空',
             'nickname.min' => '用户的长度最少必须是3个字符',
             'nickname.max' => '用户的长度最多必须是24个字符',
             'phone' => '手机格式错误',
@@ -78,7 +78,7 @@ class Message extends BaseController
         $res = Db::table('message')->insert($data);
         if($res)
         {
-            $this->success('提交成功', 'home/message/index');
+            $this->success('提交成功', 'home/contact/index');
         }else{
             $this->error('新增失败');
         }

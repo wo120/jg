@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\job\edit.html";i:1546912699;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\job\edit.html";i:1547186193;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -169,14 +169,14 @@
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">任职要求</label>
             <div class="layui-input-block">
-                <textarea name="claim" placeholder="任职要求" class="layui-textarea"><?php echo !empty($data['claim'])?$data['claim']:''; ?></textarea>
+                <textarea name="claim" id="claim" placeholder="任职要求" class="layui-textarea"><?php echo !empty($data['claim'])?$data['claim']:''; ?></textarea>
             </div>
         </div>
 
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">任职要求[英文]</label>
             <div class="layui-input-block">
-                <textarea name="en_claim" placeholder="任职要求" class="layui-textarea"><?php echo !empty($data['en_claim'])?$data['en_claim']:''; ?></textarea>
+                <textarea name="en_claim" id="en_claim" placeholder="任职要求" class="layui-textarea"><?php echo !empty($data['en_claim'])?$data['en_claim']:''; ?></textarea>
             </div>
         </div>
 
@@ -205,6 +205,14 @@
         var upload = layui.upload;
 
         //默认值
+        var claim = $("#claim").val();
+        var en_claim = $("#en_claim").val();
+
+        var reg=new RegExp("<br>","g"); //创建正则RegExp对象
+         claim =claim.replace(reg,"\n");
+        en_claim =en_claim.replace(reg,"\n");
+         $("#claim").val(claim);
+         $("#en_claim").val(en_claim);
 
 
 
@@ -214,12 +222,16 @@
         laydate.render({elem: '#year' ,type: 'year'});
 
 
-
         //监听提交
         form.on('submit(add)', function(data){
             var dataArr = data.field;
-
-            console.log(dataArr);
+            var claim   = dataArr.claim;
+            var en_claim   = dataArr.en_claim;
+            claim    = claim.replace(/\n|\r\n/g,"<br>");
+            en_claim = en_claim.replace(/\n|\r\n/g,"<br>");
+            dataArr.claim = claim;
+            dataArr.en_claim = en_claim;
+            console.log(dataArr);   
 
             //发异步，把数据提交给php
 
@@ -232,7 +244,7 @@
                     console.log(data)
                     if(data == 1){
 
-                        layer.alert("增加成功", {icon: 6}, function () {
+                        layer.alert("修改成功", {icon: 6}, function () {
                             var index = parent.layer.getFrameIndex(window.name);  // 获得frame索引
                             parent.layer.close(index); //关闭当前frame
                             parent.location.href="lists";

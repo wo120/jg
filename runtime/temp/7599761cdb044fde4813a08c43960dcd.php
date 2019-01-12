@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\resume\lang.html";i:1547195483;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -44,28 +45,49 @@
 </div>
 <div class="x-body">
 
-    <table class="layui-table">
-        <tbody>
+    <fieldset class="layui-elem-field layui-field-title site-title">
+        <legend><a name="templet">教育经历</a></legend>
+    </fieldset>
+    <!--school_time  school major education-->
+    <table class="layui-table" style="table-layout:fixed">
         <tr>
-            <th>
-                <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
-            </th>
-            <td>应聘岗位</td>
-            <td>{$data.job_name}</td>
-            <td>填表日期</td>
-            <td>{$data.time}</td>
-            <td>期望年薪 </td>
-            <td>{$data.hope_year_salary}</td>
+            <th>起止时间</th>
+            <th>毕业院校</th>
+            <th>专业</th>
+            <th>学历</th>
+        </tr>
+
+        <?php if(is_array($education_undergo) || $education_undergo instanceof \think\Collection || $education_undergo instanceof \think\Paginator): $i = 0; $__LIST__ = $education_undergo;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+        <tr>
+            <td><?php echo $vo['school_time']; ?></td>
+            <td><?php echo $vo['school']; ?></td>
+            <td><?php echo $vo['major']; ?></td>
+            <td><?php echo $vo['education']; ?></td>
 
         </tr>
-        </tbody>
-
-
+        <?php endforeach; endif; else: echo "" ;endif; ?>
 
     </table>
 
 
+    <fieldset class="layui-elem-field layui-field-title site-title">
+        <legend><a name="templet">其他</a></legend>
+    </fieldset>
+    <table class="layui-table" style="table-layout:fixed">
 
+        <tr>
+            <th>持有的职业资格证件及取证时间</th>
+            <th>核心技能及专长自述</th>
+        </tr>
+
+
+        <?php if(is_array($data['cert']) || $data['cert'] instanceof \think\Collection || $data['cert'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['cert'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$$v1): $mod = ($i % 2 );++$i;?>
+        <tr>
+            <td><?php echo $v1['time']; ?></td>
+            <td><?php echo $v1['prize']; ?></td>
+        </tr>
+        <?php endforeach; endif; else: echo "" ;endif; ?>
+    </table>
 
 </div>
 <script>
@@ -108,7 +130,7 @@
             //发异步删除数据
 
             $.ajax({
-                url:'{:url("admin/resume/del")}',
+                url:'<?php echo url("admin/resume/del"); ?>',
                 type:'POST',
                 data:{"id":id},
                 success:function(data){
@@ -137,7 +159,7 @@
             //捉到所有被选中的，发异步进行删除
             console.log(data);
             $.ajax({
-                url:'{:url("admin/resume/dels")}',
+                url:'<?php echo url("admin/resume/dels"); ?>',
                 type:'POST',
                 data:{"ids":data},
                 success:function(data){

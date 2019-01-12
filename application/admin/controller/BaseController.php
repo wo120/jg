@@ -45,7 +45,7 @@ class BaseController extends Controller
     public function _initialize()
     {
         //防非法登录
-        $this->check_login();
+//        $this->check_login();
 
         //检测权限
 //        $this->check_auth();

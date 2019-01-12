@@ -105,6 +105,10 @@ class Job extends BaseController
     {
         $id  = Request::instance()->param("id");
         $data = Db::table('job')->where('id',$id)->find();
+//        replace(/\n|\r\n/g,"<br>");
+//        $data['claim'] = str_replace("<br>",'\n/g',  $data['claim']);
+//        $data['en_claim'] =  str_replace("<br>",'\r\n/g',  $data['en_claim']);
+
 
         $this ->assign('data',$data);
         return $this->fetch();
