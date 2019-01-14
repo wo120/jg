@@ -1,0 +1,425 @@
+body {
+    background: #fafafa
+}
+
+.sect1 {
+    background: url("../static/img/home-bg.jpg") no-repeat top center;
+    height: 922px;
+}
+
+.sect1 .cont {
+    color: #fff;
+}
+
+.sect1 .cont h2 {
+    font-size: 32px;
+    margin-top: 180px
+}
+
+.sect1 .cont .line {
+    width: 160px;
+    height: 4px;
+    background: #fff;
+    margin: 28px 0 40px
+}
+
+.sect1 .cont p {
+    font-size: 52px;
+}
+
+.sect1 .cont p span {
+    color: baseColor
+}
+
+.sect1 header {
+    box-shadow: none;
+    background: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.14));
+    width: 100%;
+}
+
+.sect1 header .container {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+}
+
+.sect1 header .container .logo {
+    width: 186px;
+    height: 60px;
+    margin-right: 80px
+}
+
+.sect1 header .container nav {
+    display: flex;
+    height: 100%;
+}
+
+.sect1 header .container nav a {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.sect1 header .container nav a.active {
+    position: relative;
+}
+
+.sect1 header .container nav a.active::before {
+    content: '';
+    width: 100%;
+    height: 5px;
+    background: #d82128;
+    position: absolute;
+    bottom: 0;
+    left: 0
+}
+
+.sect1 header .container nav a ~ a {
+    margin-left: 50px
+}
+
+.sect2 .container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 170px;
+    padding-bottom: 300px
+}
+
+.sect2 .left {
+    width: 420px;
+}
+
+.sect2 .left .line {
+    width: 150px;
+    height: 5px;
+    background: #000;
+    margin-bottom: 60px
+}
+
+.sect2 .left h2 {
+    font-size: 48px;
+    margin-bottom: 38px
+}
+
+.sect2 .left p {
+    font-size: 32px;
+    font-weight: 600
+}
+
+.sect2 .left p.desc {
+    font-size: 20px;
+    height: 168px;
+    margin-top: 20px
+}
+
+.sect2 .left button {
+    width: 140px;
+    height: 35px;
+    background: baseColor;
+    color: #fff;
+    border: none;
+    margin: 11px 0 44px
+}
+
+.sect2 .right {
+    padding-top: 97px;
+}
+
+.sect2 .right ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 115px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.sect2 .right ul li {
+    text-align: center;
+}
+
+.sect2 .right ul li h2 {
+    font-size: 64px;
+    position: relative;
+}
+
+.sect2 .right ul li h2 span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px
+}
+
+.sect2 .right ul li p {
+    font-size: 20px
+}
+
+.sect2 .right ul li.line {
+    width: 2px;
+    height: 64px;
+    background: #949494
+}
+
+.sect3 {
+    width: 100%;
+    height: 760px;
+    background: url("../static/img/500082889_banner.jpg") center no-repeat;
+    color: #fff;
+}
+
+.sect3 .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+}
+
+.sect3 .container h2 {
+    font-size: 75px
+}
+
+.sect3 .container p {
+    font-size: 24px
+}
+
+.sect4 {
+    position: relative;
+    padding-bottom: 200px;
+}
+
+.sect4 .cont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sect4 .cont .text {
+    padding-right: 48px;
+    width: 615px;
+}
+
+.sect4 .cont .text .line {
+    width: 150px;
+    height: 5px;
+    background: #000;
+    margin-bottom: 40px
+}
+
+.sect4 .cont .text p {
+    font-size: 48px
+}
+
+.sect4 .cont .text h2 {
+    font-size: 64px;
+    margin: 27px 0 39px
+}
+
+.sect4 .cont .text p.desc {
+    font-size: 20px
+}
+
+.sect4 .cont .text button {
+    width: 140px;
+    height: 35px;
+    background: baseColor;
+    color: #fff;
+    border: none;
+    margin: 60px 0 0
+}
+
+.sect4 ul.nav {
+    background: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+    transform: translate3d(0, -50%, 0);
+}
+
+.sect4 ul.nav li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    height: 100%;
+    justify-content: center;
+}
+
+.sect4 ul.nav li.active {
+    position: relative;
+}
+
+.sect4 ul.nav li.active .iconfont {
+    color: baseColor
+}
+
+.sect4 ul.nav li.active:after {
+    content: '';
+    width: 100%;
+    height: 5px;
+    background: baseColor;
+    position: absolute;
+    bottom: 0;
+    left: 0
+}
+
+.sect4 ul.nav li .iconfont {
+    font-size: 80px
+}
+
+.sect5 {
+    padding-bottom: 150px;
+}
+
+.sect5 .container > h2 {
+    font-size: 64px;
+    text-align: center;
+    margin: 0 0 42px
+}
+
+.sect5 .container ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.sect5 .container ul li img {
+    width: 360px;
+    height: 230px
+}
+
+.sect5 .container ul li .cont {
+    width: 360px;
+    height: 150px;
+    background: #fff;
+    padding: 15px;
+}
+
+.sect5 .container ul li .cont h2 {
+    font-size: 18px
+}
+
+.sect5 .container ul li .cont .time {
+    font-size: 14px;
+    line-height: 2
+}
+
+.sect5 .container ul li .cont .line {
+    width: 100%;
+    height: 1px;
+    background: #000;
+    margin-bottom: 10px
+}
+
+.sect5 .container ul li .cont .desc {
+    font-size: 16px
+}
+
+footer {
+    background: #282828;
+    height: 455px;
+}
+
+footer .container {
+    height: calc(100% - 30px);
+    position: relative;
+}
+
+footer .container .copyright {
+    position: absolute;
+    bottom: 27px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #fff
+}
+
+footer .container .logo {
+    width: 220px;
+    margin: 50px 0 24px
+}
+
+footer .container .content {
+    border-top: 1px solid #fff;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    padding-top: 28px;
+}
+
+footer .container .content .right {
+    width: 250px;
+}
+
+footer .container .content .right p {
+    font-size: 12px;
+    text-align: right
+}
+
+footer .container .content .right ul {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+footer .container .content .right ul li {
+    margin-left: 30px;
+}
+
+footer .container .content .right ul li .iconfont {
+    font-size: 30px;
+    line-height: 40px;
+    color: baseColor
+}
+
+footer .container .content .qrcode {
+    width: 100px;
+    height: 100px;
+    background: #fff
+}
+
+footer .container .content nav {
+    display: flex;
+}
+
+footer .container .content nav ul ~ ul {
+    margin-left: 40px
+}
+
+footer .container .content nav ul h2 {
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    margin-bottom: 8px
+}
+
+footer .container .content nav ul.active h2 {
+    position: relative;
+}
+
+footer .container .content nav ul.active h2:after {
+    content: '';
+    background: baseColor;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0
+}
+
+footer .container .content nav ul li {
+    font-size: 12px;
+    line-height: 1.6
+}
+
+footer .bottom {
+    background: baseColor;
+    height: 30px
+}

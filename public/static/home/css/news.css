@@ -1,0 +1,120 @@
+.sect1 {
+  background: url("../static/img/news-bg.jpg") no-repeat top center;
+  height: 230px;
+}
+.sect1 .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sect1 .container .fun-wrap {
+  display: flex;
+  margin-right: 130px;
+}
+.sect1 .container .fun-wrap i {
+  width: 65px;
+  height: 65px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+.sect1 .container .fun-wrap i:active {
+  opacity: 0.6;
+}
+.sect1 .container .fun-wrap i img {
+  width: 27px;
+  height: 27px;
+}
+.sect1 .container .text h1 {
+  font-size: 48px;
+}
+.sect1 .container .text h2 {
+  font-size: 32px;
+}
+.sect2 {
+  box-shadow: 5px 5px 5px rgba(201,201,201,0.35);
+}
+.sect2 nav {
+  height: 75px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  align-items: center;
+  font-size: 18px;
+}
+.sect2 nav a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.sect2 nav a.active {
+  position: relative;
+}
+.sect2 nav a.active:after {
+  content: '';
+  width: 100%;
+  height: 5px;
+  background: #d82128;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.sect3 {
+  background: #fafafa;
+  height: 900px;
+  padding-top: 50px;
+}
+.sect3 .select {
+  display: flex;
+}
+.sect3 .select .arrow {
+  width: 50px;
+  height: 50px;
+  background: #d82128;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.sect3 .select .arrow img {
+  width: 22px;
+}
+.sect3 .select ul li {
+  width: 130px;
+  height: 50px;
+  border-bottom: 1px solid #c9c9c9;
+  font-size: 32px;
+  text-align: center;
+  background: #fff;
+}
+.sect3 .news {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 60px;
+  margin-top: 160px;
+}
+.sect3 .news li img {
+  width: 360px;
+  height: 222px;
+}
+.sect3 .news li .text {
+  width: 360px;
+  height: 115px;
+  background: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sect3 .news li .text h1 {
+  font-size: 30px;
+}
+.sect3 .news li .text h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
