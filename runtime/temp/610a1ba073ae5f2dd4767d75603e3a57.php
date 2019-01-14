@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\news\hy_add.html";i:1546671888;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\news\hy_add.html";i:1547430738;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -46,37 +46,6 @@
 <body>
 <form class="layui-form" method="post" enctype="multipart/form-data">
 <div class="x-body">
-
-
-        <div class="layui-form-item">
-            <label for="nper" class="layui-form-label">
-                <span class="x-red">*</span>期数
-            </label>
-
-            <!--<div class="layui-input-inline"  style="width: 15%" >-->
-                <!--<select name="nper_time">-->
-                    <!--<option>&#45;&#45;请选择&#45;&#45;</option>-->
-                    <!--<?php $__FOR_START_5609__=2012;$__FOR_END_5609__=2099;for($i=$__FOR_START_5609__;$i < $__FOR_END_5609__;$i+=1){ ?>-->
-                    <!--<option value="<?php echo $i; ?>年"><?php echo $i; ?>年</option>-->
-                    <!--<?php } ?>-->
-                <!--</select>-->
-            <!--</div>-->
-            <div class="layui-input-inline">
-                <input class="layui-input" placeholder="xxx年" name="nper_time" id="year" style="width: 50%" >
-            </div>
-            <div class="layui-form-mid" style="margin-left: -95px;">
-                年
-            </div>
-
-            <div class="layui-input-inline" style="margin-left: -76px;">
-                <input type="text" id="nper" name="nper" required="" lay-verify="required" style="width: 30%"
-                       autocomplete="off" class="layui-input" >
-            </div>
-            <div class="layui-form-mid" style="margin-left: -135px;">
-                期
-            </div>
-
-        </div>
 
         <div class="layui-form  layui-col-md12 x-so" >
             <label for="username" class="layui-form-label">

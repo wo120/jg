@@ -13,7 +13,7 @@ class Index extends BaseController
     public function index()
     {
         //查询3条新闻资讯
-        $data =  Db::table('news')->order('id desc')->limit(3)->select();
+        $data =  Db::table('news')->order('id desc')->limit(3)->where('type','in','2,3,4')->select();
         $this->assign('data',$data);
         return $this->fetch();
     }

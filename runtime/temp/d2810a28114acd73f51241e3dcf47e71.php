@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpstudy\WWW\changcheng\public/../application/home\view\contact\index.html";i:1547206777;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpstudy\WWW\changcheng\public/../application/home\view\contact\index.html";i:1547281085;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +44,7 @@
         <div class="box">
             <header>
                 <div class="container">
-                    <img src="__HOME_STATIC__/img/2.png" alt class="logo">
+                    <img src="__HOME_STATIC__/img/1.png" alt class="logo">
                     <nav>
                         <a href="<?php echo url('index/index'); ?>">首页</a>
                         <a href="<?php echo url('about/index'); ?>" >关于长城</a>
@@ -157,7 +157,7 @@
                     </div>
                   </div>
                         <div class="btn-wrap">
-                            <button class="submit">提交申请</button>
+                            <button class="submit">提交</button>
                             <button type="reset">取消</button>
                         </div>
                 </form>

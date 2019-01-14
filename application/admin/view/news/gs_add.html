@@ -47,36 +47,6 @@
 <div class="x-body">
 
 
-        <div class="layui-form-item">
-            <label for="nper" class="layui-form-label">
-                <span class="x-red">*</span>期数
-            </label>
-
-            <!--<div class="layui-input-inline"  style="width: 15%" >-->
-                <!--<select name="nper_time">-->
-                    <!--<option>&#45;&#45;请选择&#45;&#45;</option>-->
-                    <!--{for start="2012" end="2099" }-->
-                    <!--<option value="{$i}年">{$i}年</option>-->
-                    <!--{/for}-->
-                <!--</select>-->
-            <!--</div>-->
-            <div class="layui-input-inline">
-                <input class="layui-input" placeholder="xxx年" name="nper_time" id="year" style="width: 50%" >
-            </div>
-            <div class="layui-form-mid" style="margin-left: -95px;">
-                年
-            </div>
-
-            <div class="layui-input-inline" style="margin-left: -76px;">
-                <input type="text" id="nper" name="nper" required="" lay-verify="required" style="width: 30%"
-                       autocomplete="off" class="layui-input" >
-            </div>
-            <div class="layui-form-mid" style="margin-left: -135px;">
-                期
-            </div>
-
-        </div>
-
         <div class="layui-form  layui-col-md12 x-so" >
             <label for="username" class="layui-form-label">
                 <span class="x-red">*</span>时间
@@ -195,7 +165,7 @@
         //单文件上传
          var uploadInst = upload.render({
              elem: '#test1' //绑定元素
-             ,url: "{:url('admin/news/gc_upload')}" //上传接口
+             ,url: "{:url('admin/news/gs_upload')}" //上传接口
              ,done: function(res){
                  console.log(res);  //上传完毕回调
                  console.log(res.code);  //上传完毕回调
@@ -223,7 +193,7 @@
             //发异步，把数据提交给php
 
                 $.ajax({
-                    url:'{:url("admin/news/gc_go")}',
+                    url:'{:url("admin/news/gs_go")}',
                     type:'POST',
                     data:{"data":dataArr},
 
@@ -234,7 +204,7 @@
                             layer.alert("增加成功", {icon: 6}, function () {
                                 var index = parent.layer.getFrameIndex(window.name);  // 获得frame索引
                                 parent.layer.close(index); //关闭当前frame
-                                parent.location.href="gc_news";
+                                parent.location.href="gs_news";
 //
                             });
 

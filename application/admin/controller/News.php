@@ -126,6 +126,7 @@ class News extends BaseController
 
 
         $nper_time  = $tmp_data['nper_time'].'年';  //2018年
+        $year =  $tmp_data['nper_time'];
         $nper_tmp       = $tmp_data['nper'];   //1
 
         $nper       = $nper_time.$nper_tmp.'期';
@@ -146,7 +147,7 @@ class News extends BaseController
         $en_summary = mb_substr($en_content,0,120);
 
 
-        $arr = compact('type','nper','title','time','content','en_content','summary','en_summary','index_img','title','en_title');
+        $arr = compact('year','type','nper','title','time','content','en_content','summary','en_summary','index_img','title','en_title');
         $res = Db::table('news')->insert($arr);
 
         return $res?1:0;
@@ -379,18 +380,19 @@ class News extends BaseController
         $title      = $tmp_data['title'];
         $en_title   = $tmp_data['en_title'];
 
+
         $content     = preg_replace('/\"/', "'", $tmp_data['editor']);
         $en_content  = preg_replace('/\"/', "'", $tmp_data['en_editor']);
 
 
-        $type   = 1; //长城报
+        $type   = 2; //长城报
 
         //简介
         $summary    = mb_substr($content,0,120);
         $en_summary = mb_substr($en_content,0,120);
 
-
-        $arr = compact('type','title','time','content','en_content','summary','en_summary','index_img','title','en_title');
+        $year =    date('Y');
+        $arr = compact('year','type','title','time','content','en_content','summary','en_summary','index_img','title','en_title');
         $res = Db::table('news')->insert($arr);
 
         return $res?1:0;
@@ -626,8 +628,8 @@ class News extends BaseController
         $summary    = mb_substr($content,0,120);
         $en_summary = mb_substr($en_content,0,120);
 
-
-        $arr = compact('type','title','time','content','en_content','summary','en_summary','index_img','title','en_title');
+        $year =    date('Y');
+        $arr = compact('year','type','title','time','content','en_content','summary','en_summary','index_img','title','en_title');
         $res = Db::table('news')->insert($arr);
 
         return $res?1:0;
@@ -862,8 +864,8 @@ class News extends BaseController
         $summary    = mb_substr($content,0,120);
         $en_summary = mb_substr($en_content,0,120);
 
-
-        $arr = compact('type','title','time','content','en_content','summary','en_summary','index_img','title','en_title');
+        $year =    date('Y');
+        $arr = compact('year','type','title','time','content','en_content','summary','en_summary','index_img','title','en_title');
         $res = Db::table('news')->insert($arr);
 
         return $res?1:0;

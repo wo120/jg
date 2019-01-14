@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\news\mt_add.html";i:1547431320;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -45,6 +46,7 @@
 <body>
 <form class="layui-form" method="post" enctype="multipart/form-data">
 <div class="x-body">
+
 
         <div class="layui-form  layui-col-md12 x-so" >
             <label for="username" class="layui-form-label">
@@ -164,7 +166,7 @@
         //单文件上传
          var uploadInst = upload.render({
              elem: '#test1' //绑定元素
-             ,url: "{:url('admin/news/hy_upload')}" //上传接口
+             ,url: "<?php echo url('admin/news/mt_upload'); ?>" //上传接口
              ,done: function(res){
                  console.log(res);  //上传完毕回调
                  console.log(res.code);  //上传完毕回调
@@ -192,7 +194,7 @@
             //发异步，把数据提交给php
 
                 $.ajax({
-                    url:'{:url("admin/news/hy_go")}',
+                    url:'<?php echo url("admin/news/mt_go"); ?>',
                     type:'POST',
                     data:{"data":dataArr},
 
@@ -203,7 +205,7 @@
                             layer.alert("增加成功", {icon: 6}, function () {
                                 var index = parent.layer.getFrameIndex(window.name);  // 获得frame索引
                                 parent.layer.close(index); //关闭当前frame
-                                parent.location.href="hy_news";
+                                parent.location.href="mt__news";
 //
                             });
 

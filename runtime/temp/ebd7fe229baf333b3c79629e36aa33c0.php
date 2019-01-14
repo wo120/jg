@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpstudy\WWW\changcheng\public/../application/home\view\culture\index.html";i:1547208032;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpstudy\WWW\changcheng\public/../application/home\view\culture\index.html";i:1547281021;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,14 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="__HOME_CSS__/reset.css">
     <link rel="stylesheet" href="__HOME_CSS__/buzCulture.css">
-    <title>新闻</title>
+    <title>企业文化</title>
 </head>
 
 <body>
         <div>
             <header>
                 <div class="container">
-                    <img src="__HOME_STATIC__/img/2.png" alt class="logo">
+                    <img src="__HOME_STATIC__/img/1.png" alt class="logo">
                     <nav>
                         <a href="<?php echo url('index/index'); ?>">首页</a>
                         <a href="<?php echo url('about/index'); ?>" >关于长城</a>
