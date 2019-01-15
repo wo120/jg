@@ -11,28 +11,35 @@
 </head>
 
 <body>
-        <div>
-            <header>
-                <div class="container">
-                    <img src="__HOME_STATIC__/img/1.png" alt class="logo">
-                    <nav>
-                        <a href="{:url('index/index')}">首页</a>
-                        <a href="{:url('about/index')}" >关于长城</a>
-                        <a href="{:url('product/index')}" >产品中心</a>
-                        <a href="{:url('news/index')}" >新闻资讯</a>
-                        <a href="{:url('culture/index')}" class="active">企业文化</a>
-                        <a href="{:url('resume/index')}">人力资源</a>
-                        <a href="{:url('contact/index')}">联系我们</a>
-                    </nav>
-                </div>
-            </header>
-                <div class="sect1">
-                  <div class="container">
-                    <div class="text">
-                      <h1>COMPANY CULTURE</h1>
-                      <h2>企业文化</h2>
+    <div>
+        <header>
+            <div class="container">
+                <img src="__HOME_STATIC__/img/1.png" alt class="logo">
+                <nav>
+                    <a href="{:url('index/index')}">首页</a>
+                    <a href="{:url('about/index')}">关于长城</a>
+                    <a href="{:url('product/index')}">产品中心</a>
+                    <a href="{:url('news/index')}">新闻资讯</a>
+                    <a href="{:url('culture/index')}" class="active">企业文化</a>
+                    <a href="{:url('resume/index')}">人力资源</a>
+                    <a href="{:url('contact/index')}">联系我们</a>
+                </nav>
+                <div class="btn-wrap">
+                    <i class="iconfont icon-Group-"></i>
+                    <div class="lang-switch">
+                        <img src="__HOME_STATIC__/img/eng.png" width="30" height="30" alt="">
+                        <span>En</span>
                     </div>
-                    <!-- <div class="fun-wrap">
+                </div>
+            </div>
+        </header>
+        <div class="sect1">
+            <div class="container">
+                <div class="text">
+                    <h1>COMPANY CULTURE</h1>
+                    <h2>企业文化</h2>
+                </div>
+                <!-- <div class="fun-wrap">
                       <i>
                         <img src="/static/img/arrow.png" style="transform:rotate(180deg)" alt>
                       </i>
@@ -40,35 +47,35 @@
                         <img src="/static/img/arrow.png" alt>
                       </i>
                     </div>-->
-                  </div>
-                </div>
-                <div class="sect2">
-                    <div class="container">
-                    <nav>
-                        <a href class="active">节日活动</a>
-                        <a href>公司文化</a>
-                        <a href>职工之家</a>
-                        <a href>拓展训练</a>
-                        <a href>工艺活动</a>
-                    </nav>
-                    </div>
-                </div>
-                <div class="sect3">
-                    <div class="container">
-                        <h1>FESTIVAL <span>EVENT</span></h1>
-                        <p>节日活动</p>
-                        <ul>
-                            {volist name='act' id='v'}
-                            <li>
-                                <img src="__BASE_URL__/{$v.img}" alt="">
-                            </li>
-                            {/volist}
-                        </ul>
-                    </div>
-                </div>
-                  <!-- 底部菜单 -->
+            </div>
+        </div>
+        <div class="sect2">
+            <div class="container">
+                <nav>
+                    <a href class="active">节日活动</a>
+                    <a href>公司文化</a>
+                    <a href>职工之家</a>
+                    <a href>拓展训练</a>
+                    <a href>工艺活动</a>
+                </nav>
+            </div>
+        </div>
+        <div class="sect3">
+            <div class="container">
+                <h1>FESTIVAL <span>EVENT</span></h1>
+                <p>节日活动</p>
+                <ul>
+                    {volist name='act' id='v'}
+                    <li>
+                        <img src="__BASE_URL__/{$v.img}" alt="">
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        <!-- 底部菜单 -->
         {include file="public/foot"}
-              </div>
+    </div>
 </body>
 
 </html>

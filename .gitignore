@@ -3,5 +3,9 @@ composer.lock
 *.log
 thinkphp
 application/database.php
+<<<<<<< HEAD
 application/config.php
+=======
+runtime
+>>>>>>> b8ad694cce633ee0b02b5651cb85ed10b39dc19a
 

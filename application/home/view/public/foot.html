@@ -73,3 +73,17 @@
 </footer>
 
 <link rel="stylesheet" href="__HOME_STATIC__/fonts/iconfont.css">
+<script>
+    $(function(){
+        $('header .btn-wrap .lang-switch').click(function(){
+            let href = location.href;
+            if (href.indexOf('changcheng_en') == -1) {
+                href = href.replace('changcheng','changcheng_en')
+            }else{
+                href = href.replace('changcheng_en','changcheng')
+            }
+            location.href = href;
+            
+        })
+    })
+</script>
