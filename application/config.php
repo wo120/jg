@@ -157,7 +157,7 @@ return [
            '__ADMIN_VIEW__' => '/static/admin/html',
            '__ADMIN_DIT__' => '/static/admin/ueditor',
 
-           '__BASE_URL__' => 'http://changcheng.gmax1.com'
+           '__BASE_URL__' => 'http://cc.com'
 
     ],
     // 默认跳转页面对应的模板文件
@@ -258,7 +258,7 @@ return [
     ],
 
     'base_url'=>[
-        'url'=>'http://changcheng.gmax1.com'
+        'url'=>'http://cc.com'
     ],
     'mongodb_yun'=>[
         'type'  =>  '\think\mongo\Connection',

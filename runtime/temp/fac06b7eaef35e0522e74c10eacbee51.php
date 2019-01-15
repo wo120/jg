@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\about\add.html";i:1547537213;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -157,7 +158,7 @@
              //文件上传
              var uploadInst = upload.render({
                  elem: '#test1' //绑定元素
-                 ,url: "{:url('admin/about/upload')}" //上传接口
+                 ,url: "<?php echo url('admin/about/upload'); ?>" //上传接口
                  ,auto:true   //自动上传
                  ,field:'file'
                  ,acceptMime: 'image/*'//（只显示图片文件）
@@ -196,7 +197,7 @@
 
             //发异步，把数据提交给php
                 $.ajax({
-                    url:'{:url("admin/about/add_go")}',
+                    url:'<?php echo url("admin/about/add_go"); ?>',
                     type:'POST',
                     data:{"data":dataArr},
 

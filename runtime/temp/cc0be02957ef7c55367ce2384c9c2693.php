@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\index\index.html";i:1547091092;s:78:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\public\header.html";i:1547090673;s:76:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\public\left.html";i:1547090591;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\index\index.html";i:1547536072;s:78:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\public\header.html";i:1547536072;s:76:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\public\left.html";i:1547536072;}*/ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -148,6 +148,22 @@
                     <a _href="<?php echo url('admin/culture/lists'); ?>">
                         <i class="iconfont">&#xe6a7;</i>
                         <cite>企业文化列表</cite>
+                    </a>
+                </li >
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript:;">
+                <i class="iconfont">&#xe82a;</i>
+                <cite>关于长城</cite>
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a _href="<?php echo url('admin/about/lists'); ?>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>关于长城管理</cite>
                     </a>
                 </li >
             </ul>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\index\welcome.html";i:1547103109;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\index\welcome.html";i:1547536072;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>

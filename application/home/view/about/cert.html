@@ -53,56 +53,26 @@
   <div class="sect3">
     <div class="container">
       <ul>
+        {volist name="data.left" id = "vo"}
         <li class="active">
-          <div class="bar"><span>2008年海关A类管理企业</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+          <div class="bar"><span>{$vo.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
           <div class="pic">
-            <img src="__HOME_STATIC__/img/zhenshu1.jpg" alt="">
+            <img src="__BASE_URL__/{$vo.img}" alt="">
           </div>
         </li>
-        <li class="">
-          <div class="bar"><span>2008年海关A类管理企业</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-          <div class="pic">
-            <img src="__HOME_STATIC__/img/zhenshu1.jpg" alt="">
-          </div>
-        </li>
-        <li class="">
-          <div class="bar"><span>2008年海关A类管理企业</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-          <div class="pic">
-            <img src="__HOME_STATIC__/img/zhenshu1.jpg" alt="">
-          </div>
-        </li>
+          {/volist}
+
       </ul>
       <ul>
+          {volist name="data.right" id = "v"}
         <li class="">
-          <div class="bar"><span>2008年海关A类管理企业</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+          <div class="bar"><span>{$v.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
           <div class="pic">
-            <img src="__HOME_STATIC__/img/zhenshu1.jpg" alt="">
+            <img src="__BASE_URL__/{$v.img}" alt="">
           </div>
         </li>
-        <li class="">
-          <div class="bar"><span>2008年海关A类管理企业</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-          <div class="pic">
-            <img src="__HOME_STATIC__/img/zhenshu1.jpg" alt="">
-          </div>
-        </li>
-        <li class="">
-          <div class="bar"><span>2008年海关A类管理企业</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-          <div class="pic">
-            <img src="__HOME_STATIC__/img/zhenshu1.jpg" alt="">
-          </div>
-        </li>
-        <li class="">
-          <div class="bar"><span>2008年海关A类管理企业</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-          <div class="pic">
-            <img src="__HOME_STATIC__/img/zhenshu1.jpg" alt="">
-          </div>
-        </li>
-        <li class="">
-          <div class="bar"><span>2008年海关A类管理企业</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-          <div class="pic">
-            <img src="__HOME_STATIC__/img/zhenshu1.jpg" alt="">
-          </div>
-        </li>
+          {/volist}
+
       </ul>
     </div>
   </div>

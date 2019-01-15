@@ -24,7 +24,17 @@ class News extends BaseController
         }else{
             $cc = Db::table('news')->order('time desc')->where('type',1)->select();
         }
+
+
+        //公司新聞
+        $gs = Db::table('news')->order('time desc')->where('type',2)->where('year',$year)->select();
+        $hy = Db::table('news')->order('time desc')->where('type',3)->where('year',$year)->select();
+        $mt = Db::table('news')->order('time desc')->where('type',4)->where('year',$year)->select();
+
         $this->assign('cc',$cc);
+        $this->assign('gs',$gs);
+        $this->assign('hy',$hy);
+        $this->assign('mt',$mt);
         return $this->fetch();
 
 
