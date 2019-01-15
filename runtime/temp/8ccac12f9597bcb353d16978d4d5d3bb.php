@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:62:"C:\git\project\public/../application/home\view\news\index.html";i:1547552799;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547537221;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:62:"C:\git\project\public/../application/home\view\news\index.html";i:1547554887;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547537221;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,35 +98,36 @@
                     </li>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
                 </ul>
+
                 <ul class="news" style="display: none;">
-                    <?php if(is_array($cc) || $cc instanceof \think\Collection || $cc instanceof \think\Paginator): $i = 0; $__LIST__ = $cc;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$c): $mod = ($i % 2 );++$i;?>
+                    <?php if(is_array($gs) || $gs instanceof \think\Collection || $gs instanceof \think\Paginator): $i = 0; $__LIST__ = $gs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$s): $mod = ($i % 2 );++$i;?>
                     <li>
-                        <a href="<?php echo url('news/detail'); ?>?id=<?php echo $c['id']; ?>"> <img src="__BASE_URL__/<?php echo $c['index_img']; ?>" alt=""></a>
+                        <a href="<?php echo url('news/detail'); ?>?id=<?php echo $s['id']; ?>"> <img src="__BASE_URL__/<?php echo $s['index_img']; ?>" alt=""></a>
                         <div class="text">
-                            <h1><?php echo $c['nper']; ?></h1>
-                            <h2><?php echo $c['time']; ?></h2>
+                            <h1><?php echo $s['nper']; ?></h1>
+                            <h2><?php echo $s['time']; ?></h2>
                         </div>
                     </li>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
                 </ul>
                 <ul class="news" style="display: none;">
-                    <?php if(is_array($cc) || $cc instanceof \think\Collection || $cc instanceof \think\Paginator): $i = 0; $__LIST__ = $cc;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$c): $mod = ($i % 2 );++$i;?>
+                    <?php if(is_array($hy) || $hy instanceof \think\Collection || $hy instanceof \think\Paginator): $i = 0; $__LIST__ = $hy;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$h): $mod = ($i % 2 );++$i;?>
                     <li>
-                        <a href="<?php echo url('news/detail'); ?>?id=<?php echo $c['id']; ?>"> <img src="__BASE_URL__/<?php echo $c['index_img']; ?>" alt=""></a>
+                        <a href="<?php echo url('news/detail'); ?>?id=<?php echo $h['id']; ?>"> <img src="__BASE_URL__/<?php echo $h['index_img']; ?>" alt=""></a>
                         <div class="text">
-                            <h1><?php echo $c['nper']; ?></h1>
-                            <h2><?php echo $c['time']; ?></h2>
+                            <h1><?php echo $h['nper']; ?></h1>
+                            <h2><?php echo $h['time']; ?></h2>
                         </div>
                     </li>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
                 </ul>
                 <ul class="news" style="display: none;">
-                    <?php if(is_array($cc) || $cc instanceof \think\Collection || $cc instanceof \think\Paginator): $i = 0; $__LIST__ = $cc;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$c): $mod = ($i % 2 );++$i;?>
+                    <?php if(is_array($mt) || $mt instanceof \think\Collection || $mt instanceof \think\Paginator): $i = 0; $__LIST__ = $mt;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$t): $mod = ($i % 2 );++$i;?>
                     <li>
-                        <a href="<?php echo url('news/detail'); ?>?id=<?php echo $c['id']; ?>"> <img src="__BASE_URL__/<?php echo $c['index_img']; ?>" alt=""></a>
+                        <a href="<?php echo url('news/detail'); ?>?id=<?php echo $t['id']; ?>"> <img src="__BASE_URL__/<?php echo $t['index_img']; ?>" alt=""></a>
                         <div class="text">
-                            <h1><?php echo $c['nper']; ?></h1>
-                            <h2><?php echo $c['time']; ?></h2>
+                            <h1><?php echo $t['nper']; ?></h1>
+                            <h2><?php echo $t['time']; ?></h2>
                         </div>
                     </li>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
