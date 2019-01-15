@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:74:"E:\phpstudy\WWW\changcheng\public/../application/home\view\news\index.html";i:1547551068;s:75:"E:\phpstudy\WWW\changcheng\public/../application/home\view\public\foot.html";i:1547540777;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:74:"E:\phpstudy\WWW\changcheng\public/../application/home\view\news\index.html";i:1547551098;s:75:"E:\phpstudy\WWW\changcheng\public/../application/home\view\public\foot.html";i:1547540777;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,7 +79,6 @@
                                 <?php endforeach; endif; else: echo "" ;endif; ?>
                             </select>
                         </li>
-
                     </ul>
 
                             <div class="arrow">
