@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="__HOME_CSS__/reset.css">
     <link rel="stylesheet" href="__HOME_CSS__/buzCulture.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
     <title>企业文化</title>
 </head>
 
@@ -52,15 +54,67 @@
         <div class="sect2">
             <div class="container">
                 <nav>
-                    <a href class="active">节日活动</a>
-                    <a href>公司文化</a>
-                    <a href>职工之家</a>
-                    <a href>拓展训练</a>
-                    <a href>工艺活动</a>
+                    <a href="javascript:;" class="active">节日活动</a>
+                    <a href="javascript:;">公司文化</a>
+                    <a href="javascript:;">职工之家</a>
+                    <a href="javascript:;">拓展训练</a>
+                    <a href="javascript:;">工艺活动</a>
                 </nav>
             </div>
         </div>
-        <div class="sect3">
+        <div class="sect3" style="display: block">
+            <div class="container">
+                <h1>FESTIVAL <span>EVENT</span></h1>
+                <p>节日活动</p>
+                <ul>
+                    {volist name='act' id='v'}
+                    <li>
+                        <img src="__BASE_URL__/{$v.img}" alt="">
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        <div class="sect3" style="display: none">
+            <div class="container">
+                <h1>FESTIVAL <span>EVENT</span></h1>
+                <p>节日活动</p>
+                <ul>
+                    {volist name='act' id='v'}
+                    <li>
+                        <img src="__BASE_URL__/{$v.img}" alt="">
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        <div class="sect3" style="display: none">
+            <div class="container">
+                <h1>FESTIVAL <span>EVENT</span></h1>
+                <p>节日活动</p>
+                <ul>
+                    {volist name='act' id='v'}
+                    <li>
+                        <img src="__BASE_URL__/{$v.img}" alt="">
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        <div class="sect3" style="display: none">
+            <div class="container">
+                <h1>FESTIVAL <span>EVENT</span></h1>
+                <p>节日活动</p>
+                <ul>
+                    {volist name='act' id='v'}
+                    <li>
+                        <img src="__BASE_URL__/{$v.img}" alt="">
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        <div class="sect3" style="display: none">
             <div class="container">
                 <h1>FESTIVAL <span>EVENT</span></h1>
                 <p>节日活动</p>
@@ -75,7 +129,19 @@
         </div>
         <!-- 底部菜单 -->
         {include file="public/foot"}
+
     </div>
+    <script>
+        $(function () {
+            var $aArr = $('.sect2 nav a').click(function () {
+                let index  = $aArr.index($(this));
+                $aArr.removeClass('active')
+                $(this).toggleClass('active')
+                $('.sect3').hide().eq(index).show();
+
+            })
+        });
+    </script>
 </body>
 
 </html>

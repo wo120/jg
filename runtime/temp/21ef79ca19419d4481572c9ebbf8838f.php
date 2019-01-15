@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:62:"C:\git\project\public/../application/home\view\about\cert.html";i:1547540426;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547537221;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:62:"C:\git\project\public/../application/home\view\about\cert.html";i:1547551363;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547537221;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,201 +50,208 @@
         </nav>
       </div>
     </div>
+
     <!-- 人才理念 -->
     <div class="sect3">
 
       <div class="container" style="display: flex">
         <ul>
-          <?php if(is_array($data['left']) || $data['left'] instanceof \think\Collection || $data['left'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['left'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+          <?php if(is_array($data['left']) || $data['left'] instanceof \think\Collection || $data['left'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['left'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if($vo['cert_type'] == '1'): ?>
           <li class="active">
             <div class="bar"><span><?php echo $vo['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
             <div class="pic">
               <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
             </div>
           </li>
-          <?php endforeach; endif; else: echo "" ;endif; ?>
 
+            <?php endif; endforeach; endif; else: echo "" ;endif; ?>
         </ul>
         <ul>
-          <?php if(is_array($data['right']) || $data['right'] instanceof \think\Collection || $data['right'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['right'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+          <?php if(is_array($data['right']) || $data['right'] instanceof \think\Collection || $data['right'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['right'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;if($v['cert_type'] == '1'): ?>
           <li class="">
             <div class="bar"><span><?php echo $v['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
             <div class="pic">
               <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
             </div>
           </li>
-          <?php endforeach; endif; else: echo "" ;endif; ?>
+            <?php endif; endforeach; endif; else: echo "" ;endif; ?>
 
         </ul>
       </div>
-      <div class="container" style="display: none">
-        <ul>
-          <?php if(is_array($data['left']) || $data['left'] instanceof \think\Collection || $data['left'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['left'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-          <li class="active">
-            <div class="bar"><span><?php echo $vo['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
-            </div>
-          </li>
-          <?php endforeach; endif; else: echo "" ;endif; ?>
+        <!--省级荣誉-->
+        <div class="container" style="display: none">
+            <ul>
+                <?php if(is_array($data['left']) || $data['left'] instanceof \think\Collection || $data['left'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['left'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if($vo['cert_type'] == '2'): ?>
+                <li class="active">
+                    <div class="bar"><span><?php echo $vo['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
+                    </div>
+                </li>
+                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+            <ul>
+                <?php if(is_array($data['right']) || $data['right'] instanceof \think\Collection || $data['right'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['right'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;if($v['cert_type'] == '2'): ?>
+                <li class="">
+                    <div class="bar"><span><?php echo $v['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
+                    </div>
+                </li>
+                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
 
-        </ul>
-        <ul>
-          <?php if(is_array($data['right']) || $data['right'] instanceof \think\Collection || $data['right'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['right'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-          <li class="">
-            <div class="bar"><span><?php echo $v['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
-            </div>
-          </li>
-          <?php endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+        </div>
 
-        </ul>
-      </div>
-      <div class="container" style="display: none">
-        <ul>
-          <?php if(is_array($data['left']) || $data['left'] instanceof \think\Collection || $data['left'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['left'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-          <li class="active">
-            <div class="bar"><span><?php echo $vo['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
-            </div>
-          </li>
-          <?php endforeach; endif; else: echo "" ;endif; ?>
+        <!--市级荣誉-->
+        <div class="container" style="display: none">
+            <ul>
+                <?php if(is_array($data['left']) || $data['left'] instanceof \think\Collection || $data['left'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['left'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if($vo['cert_type'] == '3'): ?>
+                <li class="active">
+                    <div class="bar"><span><?php echo $vo['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
+                    </div>
+                </li>
+                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
 
-        </ul>
-        <ul>
-          <?php if(is_array($data['right']) || $data['right'] instanceof \think\Collection || $data['right'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['right'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-          <li class="">
-            <div class="bar"><span><?php echo $v['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
-            </div>
-          </li>
-          <?php endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+            <ul>
+                <?php if(is_array($data['right']) || $data['right'] instanceof \think\Collection || $data['right'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['right'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;if($v['cert_type'] == '3'): ?>
+                <li class="">
+                    <div class="bar"><span><?php echo $v['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
+                    </div>
+                </li>
+                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+        </div>
+        <!--地级荣誉-->
+        <div class="container" style="display: none">
+            <ul>
+                <?php if(is_array($data['left']) || $data['left'] instanceof \think\Collection || $data['left'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['left'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if($vo['cert_type'] == '4'): ?>
+                <li class="active">
+                    <div class="bar"><span><?php echo $vo['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
+                    </div>
+                </li>
+                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
 
-        </ul>
-      </div>
-      <div class="container" style="display: none">
-        <ul>
-          <?php if(is_array($data['left']) || $data['left'] instanceof \think\Collection || $data['left'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['left'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-          <li class="active">
-            <div class="bar"><span><?php echo $vo['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
-            </div>
-          </li>
-          <?php endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+            <ul>
+                <?php if(is_array($data['right']) || $data['right'] instanceof \think\Collection || $data['right'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['right'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;if($v['cert_type'] == '4'): ?>
+                <li class="">
+                    <div class="bar"><span><?php echo $v['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
+                    </div>
+                </li>
+                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
 
-        </ul>
-        <ul>
-          <?php if(is_array($data['right']) || $data['right'] instanceof \think\Collection || $data['right'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['right'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-          <li class="">
-            <div class="bar"><span><?php echo $v['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
-            </div>
-          </li>
-          <?php endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+        </div>
+        <!--5-->
+        <div class="container" style="display: none">
+            <ul>
+                <?php if(is_array($data['left']) || $data['left'] instanceof \think\Collection || $data['left'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['left'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if($vo['cert_type'] == '5'): ?>
+                <li class="active">
+                    <div class="bar"><span><?php echo $vo['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
+                    </div>
+                </li>
+                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
 
-        </ul>
-      </div>
-      <div class="container" style="display: none">
-        <ul>
-          <?php if(is_array($data['left']) || $data['left'] instanceof \think\Collection || $data['left'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['left'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-          <li class="active">
-            <div class="bar"><span><?php echo $vo['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
-            </div>
-          </li>
-          <?php endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+            <ul>
+                <?php if(is_array($data['right']) || $data['right'] instanceof \think\Collection || $data['right'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['right'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;if($v['cert_type'] == '5'): ?>
+                <li class="">
+                    <div class="bar"><span><?php echo $v['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
+                    </div>
+                </li>
+                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
 
-        </ul>
-        <ul>
-          <?php if(is_array($data['right']) || $data['right'] instanceof \think\Collection || $data['right'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['right'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-          <li class="">
-            <div class="bar"><span><?php echo $v['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
-            </div>
-          </li>
-          <?php endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+        </div>
+        <!--6-->
+        <div class="container" style="display: none">
+            <ul>
+                <?php if(is_array($data['left']) || $data['left'] instanceof \think\Collection || $data['left'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['left'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if($vo['cert_type'] == '6'): ?>
+                <li class="active">
+                    <div class="bar"><span><?php echo $vo['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
+                    </div>
+                </li>
+                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
 
-        </ul>
-      </div>
-      <div class="container" style="display: none">
-        <ul>
-          <?php if(is_array($data['left']) || $data['left'] instanceof \think\Collection || $data['left'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['left'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-          <li class="active">
-            <div class="bar"><span><?php echo $vo['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
-            </div>
-          </li>
-          <?php endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+            <ul>
+                <?php if(is_array($data['right']) || $data['right'] instanceof \think\Collection || $data['right'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['right'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;if($v['cert_type'] == '6'): ?>
+                <li class="">
+                    <div class="bar"><span><?php echo $v['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
+                    </div>
+                </li>
+                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
 
-        </ul>
-        <ul>
-          <?php if(is_array($data['right']) || $data['right'] instanceof \think\Collection || $data['right'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['right'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-          <li class="">
-            <div class="bar"><span><?php echo $v['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
-            </div>
-          </li>
-          <?php endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+        </div>
+        <!--7-->
+        <div class="container" style="display: none">
+            <ul>
+                <?php if(is_array($data['left']) || $data['left'] instanceof \think\Collection || $data['left'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['left'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if($vo['cert_type'] == '7'): ?>
+                <li class="active">
+                    <div class="bar"><span><?php echo $vo['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
+                    </div>
+                </li>
+                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
 
-        </ul>
-      </div>
-      <div class="container" style="display: none">
-        <ul>
-          <?php if(is_array($data['left']) || $data['left'] instanceof \think\Collection || $data['left'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['left'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-          <li class="active">
-            <div class="bar"><span><?php echo $vo['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
-            </div>
-          </li>
-          <?php endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+            <ul>
+                <?php if(is_array($data['right']) || $data['right'] instanceof \think\Collection || $data['right'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['right'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;if($v['cert_type'] == '7'): ?>
+                <li class="">
+                    <div class="bar"><span><?php echo $v['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
+                    </div>
+                </li>
+                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
 
-        </ul>
-        <ul>
-          <?php if(is_array($data['right']) || $data['right'] instanceof \think\Collection || $data['right'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['right'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-          <li class="">
-            <div class="bar"><span><?php echo $v['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
-            </div>
-          </li>
-          <?php endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+        </div>
+        <div class="container" style="display: none">
+            <ul>
+                <?php if(is_array($data['left']) || $data['left'] instanceof \think\Collection || $data['left'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['left'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if($vo['cert_type'] == '8'): ?>
+                <li class="active">
+                    <div class="bar"><span><?php echo $vo['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
+                    </div>
+                </li>
+                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
 
-        </ul>
-      </div>
-      <div class="container" style="display: none">
-        <ul>
-          <?php if(is_array($data['left']) || $data['left'] instanceof \think\Collection || $data['left'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['left'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-          <li class="active">
-            <div class="bar"><span><?php echo $vo['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
-            </div>
-          </li>
-          <?php endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+            <ul>
+                <?php if(is_array($data['right']) || $data['right'] instanceof \think\Collection || $data['right'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['right'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;if($v['cert_type'] == '8'): ?>
+                <li class="">
+                    <div class="bar"><span><?php echo $v['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
+                    </div>
+                </li>
+                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
 
-        </ul>
-        <ul>
-          <?php if(is_array($data['right']) || $data['right'] instanceof \think\Collection || $data['right'] instanceof \think\Paginator): $i = 0; $__LIST__ = $data['right'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-          <li class="">
-            <div class="bar"><span><?php echo $v['title']; ?></span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
-            </div>
-          </li>
-          <?php endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+        </div>
 
-        </ul>
-      </div>
     </div>
     <!-- 底部菜单 -->
   </div>
