@@ -67,9 +67,10 @@
                 <h1>FESTIVAL <span>EVENT</span></h1>
                 <p>节日活动</p>
                 <ul>
-                    {volist name='act' id='v'}
+                    {volist name='act' id='a'}
                     <li>
-                        <img src="__BASE_URL__/{$v.img}" alt="">
+                        <img src="__BASE_URL__/{$a.img}" alt="">
+                        <p>{$a.title}</p>
                     </li>
                     {/volist}
                 </ul>
@@ -78,11 +79,12 @@
         <div class="sect3" style="display: none">
             <div class="container">
                 <h1>FESTIVAL <span>EVENT</span></h1>
-                <p>节日活动</p>
+                <p>公司文化</p>
                 <ul>
-                    {volist name='act' id='v'}
+                    {volist name='gs' id='g'}
                     <li>
-                        <img src="__BASE_URL__/{$v.img}" alt="">
+                        <img src="__BASE_URL__/{$g.img}" alt="">
+                        <p>{$g.title}</p>
                     </li>
                     {/volist}
                 </ul>
@@ -91,11 +93,12 @@
         <div class="sect3" style="display: none">
             <div class="container">
                 <h1>FESTIVAL <span>EVENT</span></h1>
-                <p>节日活动</p>
+                <p>职工之家</p>
                 <ul>
-                    {volist name='act' id='v'}
+                    {volist name='zg' id='z'}
                     <li>
-                        <img src="__BASE_URL__/{$v.img}" alt="">
+                        <img src="__BASE_URL__/{$z.img}" alt="">
+                        <p>{$z.title}</p>
                     </li>
                     {/volist}
                 </ul>
@@ -104,11 +107,12 @@
         <div class="sect3" style="display: none">
             <div class="container">
                 <h1>FESTIVAL <span>EVENT</span></h1>
-                <p>节日活动</p>
+                <p>拓展训练</p>
                 <ul>
-                    {volist name='act' id='v'}
+                    {volist name='tz' id='t'}
                     <li>
-                        <img src="__BASE_URL__/{$v.img}" alt="">
+                        <img src="__BASE_URL__/{$t.img}" alt="">
+                        <p>{$t.title}</p>
                     </li>
                     {/volist}
                 </ul>
@@ -117,11 +121,12 @@
         <div class="sect3" style="display: none">
             <div class="container">
                 <h1>FESTIVAL <span>EVENT</span></h1>
-                <p>节日活动</p>
+                <p>工艺活动</p>
                 <ul>
-                    {volist name='act' id='v'}
+                    {volist name='gy' id='g'}
                     <li>
-                        <img src="__BASE_URL__/{$v.img}" alt="">
+                        <img src="__BASE_URL__/{$g.img}" alt="">
+                        <p>{$g.title}</p>
                     </li>
                     {/volist}
                 </ul>

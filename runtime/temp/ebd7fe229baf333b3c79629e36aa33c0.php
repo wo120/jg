@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:77:"E:\phpstudy\WWW\changcheng\public/../application/home\view\culture\index.html";i:1547540777;s:75:"E:\phpstudy\WWW\changcheng\public/../application/home\view\public\foot.html";i:1547540777;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:77:"E:\phpstudy\WWW\changcheng\public/../application/home\view\culture\index.html";i:1547554254;s:75:"E:\phpstudy\WWW\changcheng\public/../application/home\view\public\foot.html";i:1547540777;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="__HOME_CSS__/reset.css">
     <link rel="stylesheet" href="__HOME_CSS__/buzCulture.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
     <title>企业文化</title>
 </head>
 
@@ -53,22 +55,79 @@
         <div class="sect2">
             <div class="container">
                 <nav>
-                    <a href class="active">节日活动</a>
-                    <a href>公司文化</a>
-                    <a href>职工之家</a>
-                    <a href>拓展训练</a>
-                    <a href>工艺活动</a>
+                    <a href="javascript:;" class="active">节日活动</a>
+                    <a href="javascript:;">公司文化</a>
+                    <a href="javascript:;">职工之家</a>
+                    <a href="javascript:;">拓展训练</a>
+                    <a href="javascript:;">工艺活动</a>
                 </nav>
             </div>
         </div>
-        <div class="sect3">
+        <div class="sect3" style="display: block">
             <div class="container">
                 <h1>FESTIVAL <span>EVENT</span></h1>
                 <p>节日活动</p>
                 <ul>
-                    <?php if(is_array($act) || $act instanceof \think\Collection || $act instanceof \think\Paginator): $i = 0; $__LIST__ = $act;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+                    <?php if(is_array($act) || $act instanceof \think\Collection || $act instanceof \think\Paginator): $i = 0; $__LIST__ = $act;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$a): $mod = ($i % 2 );++$i;?>
                     <li>
-                        <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
+                        <img src="__BASE_URL__/<?php echo $a['img']; ?>" alt="">
+                        <p><?php echo $a['title']; ?></p>
+                    </li>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </ul>
+            </div>
+        </div>
+        <div class="sect3" style="display: none">
+            <div class="container">
+                <h1>FESTIVAL <span>EVENT</span></h1>
+                <p>公司文化</p>
+                <ul>
+                    <?php if(is_array($gs) || $gs instanceof \think\Collection || $gs instanceof \think\Paginator): $i = 0; $__LIST__ = $gs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$g): $mod = ($i % 2 );++$i;?>
+                    <li>
+                        <img src="__BASE_URL__/<?php echo $g['img']; ?>" alt="">
+                        <p><?php echo $g['title']; ?></p>
+                    </li>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </ul>
+            </div>
+        </div>
+        <div class="sect3" style="display: none">
+            <div class="container">
+                <h1>FESTIVAL <span>EVENT</span></h1>
+                <p>职工之家</p>
+                <ul>
+                    <?php if(is_array($zg) || $zg instanceof \think\Collection || $zg instanceof \think\Paginator): $i = 0; $__LIST__ = $zg;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$z): $mod = ($i % 2 );++$i;?>
+                    <li>
+                        <img src="__BASE_URL__/<?php echo $z['img']; ?>" alt="">
+                        <p><?php echo $z['title']; ?></p>
+                    </li>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </ul>
+            </div>
+        </div>
+        <div class="sect3" style="display: none">
+            <div class="container">
+                <h1>FESTIVAL <span>EVENT</span></h1>
+                <p>拓展训练</p>
+                <ul>
+                    <?php if(is_array($tz) || $tz instanceof \think\Collection || $tz instanceof \think\Paginator): $i = 0; $__LIST__ = $tz;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$t): $mod = ($i % 2 );++$i;?>
+                    <li>
+                        <img src="__BASE_URL__/<?php echo $t['img']; ?>" alt="">
+                        <p><?php echo $t['title']; ?></p>
+                    </li>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </ul>
+            </div>
+        </div>
+        <div class="sect3" style="display: none">
+            <div class="container">
+                <h1>FESTIVAL <span>EVENT</span></h1>
+                <p>工艺活动</p>
+                <ul>
+                    <?php if(is_array($gy) || $gy instanceof \think\Collection || $gy instanceof \think\Paginator): $i = 0; $__LIST__ = $gy;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$g): $mod = ($i % 2 );++$i;?>
+                    <li>
+                        <img src="__BASE_URL__/<?php echo $g['img']; ?>" alt="">
+                        <p><?php echo $g['title']; ?></p>
                     </li>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
                 </ul>
@@ -164,7 +223,19 @@
         })
     })
 </script>
+
     </div>
+    <script>
+        $(function () {
+            var $aArr = $('.sect2 nav a').click(function () {
+                let index  = $aArr.index($(this));
+                $aArr.removeClass('active')
+                $(this).toggleClass('active')
+                $('.sect3').hide().eq(index).show();
+
+            })
+        });
+    </script>
 </body>
 
 </html>

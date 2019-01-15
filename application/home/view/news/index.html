@@ -97,35 +97,36 @@
                     </li>
                     {/volist}
                 </ul>
+
                 <ul class="news" style="display: none;">
-                    {volist name='cc' id='c'}
+                    {volist name='gs' id='s'}
                     <li>
-                        <a href="{:url('news/detail')}?id={$c.id}"> <img src="__BASE_URL__/{$c.index_img}" alt=""></a>
+                        <a href="{:url('news/detail')}?id={$s.id}"> <img src="__BASE_URL__/{$s.index_img}" alt=""></a>
                         <div class="text">
-                            <h1>{$c.nper}</h1>
-                            <h2>{$c.time}</h2>
+                            <h1>{$s.nper}</h1>
+                            <h2>{$s.time}</h2>
                         </div>
                     </li>
                     {/volist}
                 </ul>
                 <ul class="news" style="display: none;">
-                    {volist name='cc' id='c'}
+                    {volist name='hy' id='h'}
                     <li>
-                        <a href="{:url('news/detail')}?id={$c.id}"> <img src="__BASE_URL__/{$c.index_img}" alt=""></a>
+                        <a href="{:url('news/detail')}?id={$h.id}"> <img src="__BASE_URL__/{$h.index_img}" alt=""></a>
                         <div class="text">
-                            <h1>{$c.nper}</h1>
-                            <h2>{$c.time}</h2>
+                            <h1>{$h.nper}</h1>
+                            <h2>{$h.time}</h2>
                         </div>
                     </li>
                     {/volist}
                 </ul>
                 <ul class="news" style="display: none;">
-                    {volist name='cc' id='c'}
+                    {volist name='mt' id='t'}
                     <li>
-                        <a href="{:url('news/detail')}?id={$c.id}"> <img src="__BASE_URL__/{$c.index_img}" alt=""></a>
+                        <a href="{:url('news/detail')}?id={$t.id}"> <img src="__BASE_URL__/{$t.index_img}" alt=""></a>
                         <div class="text">
-                            <h1>{$c.nper}</h1>
-                            <h2>{$c.time}</h2>
+                            <h1>{$t.nper}</h1>
+                            <h2>{$t.time}</h2>
                         </div>
                     </li>
                     {/volist}

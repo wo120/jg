@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:74:"E:\phpstudy\WWW\changcheng\public/../application/home\view\news\index.html";i:1547551098;s:75:"E:\phpstudy\WWW\changcheng\public/../application/home\view\public\foot.html";i:1547540777;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:74:"E:\phpstudy\WWW\changcheng\public/../application/home\view\news\index.html";i:1547553778;s:75:"E:\phpstudy\WWW\changcheng\public/../application/home\view\public\foot.html";i:1547540777;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="__HOME_CSS__/reset.css">
     <link rel="stylesheet" href="__HOME_CSS__/news.css">
     <title>新闻</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
     <style>
         select {
             width: 100%;
@@ -81,26 +83,87 @@
                         </li>
                     </ul>
 
-                            <div class="arrow">
-                              <img src="__HOME_STATIC__/img/arrow-down.png" alt="">
-                            </div>
-                        </div>
-                        <ul class="news">
-                            <?php if(is_array($cc) || $cc instanceof \think\Collection || $cc instanceof \think\Paginator): $i = 0; $__LIST__ = $cc;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$c): $mod = ($i % 2 );++$i;?>
-                            <li>
-                                <a href="<?php echo url('news/detail'); ?>?id=<?php echo $c['id']; ?>"> <img src="__BASE_URL__/<?php echo $c['index_img']; ?>" alt=""></a>
-                                <div class="text">
-                                    <h1><?php echo $c['nper']; ?></h1>
-                                    <h2><?php echo $c['time']; ?></h2>
-                                </div>
-                            </li>
-                            <?php endforeach; endif; else: echo "" ;endif; ?>
-                        </ul>
+                    <div class="arrow">
+                        <img src="__HOME_STATIC__/img/arrow-down.png" alt="">
                     </div>
+                </div>
+                <ul class="news">
+                    <?php if(is_array($cc) || $cc instanceof \think\Collection || $cc instanceof \think\Paginator): $i = 0; $__LIST__ = $cc;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$c): $mod = ($i % 2 );++$i;?>
+                    <li>
+                        <a href="<?php echo url('news/detail'); ?>?id=<?php echo $c['id']; ?>"> <img src="__BASE_URL__/<?php echo $c['index_img']; ?>" alt=""></a>
+                        <div class="text">
+                            <h1><?php echo $c['nper']; ?></h1>
+                            <h2><?php echo $c['time']; ?></h2>
+                        </div>
+                    </li>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </ul>
+
+                <ul class="news" style="display: none;">
+                    <?php if(is_array($gs) || $gs instanceof \think\Collection || $gs instanceof \think\Paginator): $i = 0; $__LIST__ = $gs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$s): $mod = ($i % 2 );++$i;?>
+                    <li>
+                        <a href="<?php echo url('news/detail'); ?>?id=<?php echo $s['id']; ?>"> <img src="__BASE_URL__/<?php echo $s['index_img']; ?>" alt=""></a>
+                        <div class="text">
+                            <h1><?php echo $s['nper']; ?></h1>
+                            <h2><?php echo $s['time']; ?></h2>
+                        </div>
+                    </li>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </ul>
+                <ul class="news" style="display: none;">
+                    <?php if(is_array($hy) || $hy instanceof \think\Collection || $hy instanceof \think\Paginator): $i = 0; $__LIST__ = $hy;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$h): $mod = ($i % 2 );++$i;?>
+                    <li>
+                        <a href="<?php echo url('news/detail'); ?>?id=<?php echo $h['id']; ?>"> <img src="__BASE_URL__/<?php echo $h['index_img']; ?>" alt=""></a>
+                        <div class="text">
+                            <h1><?php echo $h['nper']; ?></h1>
+                            <h2><?php echo $h['time']; ?></h2>
+                        </div>
+                    </li>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </ul>
+                <ul class="news" style="display: none;">
+                    <?php if(is_array($mt) || $mt instanceof \think\Collection || $mt instanceof \think\Paginator): $i = 0; $__LIST__ = $mt;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$t): $mod = ($i % 2 );++$i;?>
+                    <li>
+                        <a href="<?php echo url('news/detail'); ?>?id=<?php echo $t['id']; ?>"> <img src="__BASE_URL__/<?php echo $t['index_img']; ?>" alt=""></a>
+                        <div class="text">
+                            <h1><?php echo $t['nper']; ?></h1>
+                            <h2><?php echo $t['time']; ?></h2>
+                        </div>
+                    </li>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </ul>
             </div>
         </div>
-        <!-- 底部菜单 -->
-        <!-- 底部菜单 -->
+    </div>
+    <!-- 底部菜单 -->
+    <script>
+        $(function () {
+
+            //监听下拉事件
+            $("#year").change(function () {
+                var year = $("#year").val();
+                window.location.href = "<?php echo url('news/index'); ?>?year=" + year;
+
+
+
+            })
+            // var $contWrap = $('.cont-wrap');
+            var $aArr = $('.sect2 nav a').click(function (e) {
+                $(this).addClass('active').siblings('a').removeClass('active');
+                var index = $aArr.index($(this))
+                if (!index) {
+                    $('.sect3 .select').show()
+                }else{
+                    $('.sect3 .select').hide()
+
+                }
+                $('.news').hide().eq(index).show();
+
+
+            })
+        })
+    </script>
+    <!-- 底部菜单 -->
 <footer>
     <div class="container">
         <img src="__HOME_STATIC__/img/2.png" alt class="logo">
@@ -191,25 +254,5 @@
 </script>
     </div>
 </body>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script>
-    $(function () {
-
-        //监听下拉事件
-        $("#year").change(function () {
-            var year = $("#year").val();
-            window.location.href = "<?php echo url('news/index'); ?>?year=" + year;
-
-
-
-        })
-        // var $contWrap = $('.cont-wrap');
-        var $aArr = $('.sect2 nav a').click(function (e) {
-            $(this).addClass('active').siblings('a').removeClass('active');
-            var index = $aArr.index($(this))
-
-        })
-    })
-</script>
 
 </html>
