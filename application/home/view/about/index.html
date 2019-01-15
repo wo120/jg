@@ -49,7 +49,7 @@
         </nav>
       </div>
     </div>
-    <div class="sect3">
+    <div class ="sect sect3" style="display: block">
       <div class="container">
         <h1>
           <span>COMPANY</span> PROFILE
@@ -103,7 +103,7 @@
         </div>
       </div>
     </div>
-    <div class="sect4">
+    <div class=" sect sect4">
       <div class="container">
         <h1>HISTORY</h1>
         <h2>发展历程</h2>
@@ -233,7 +233,7 @@
         </h4>
       </div>
     </div>
-    <div class="sect5">
+    <div class=" sect sect5">
       <div class="container">
         <h1>LEADERSHIP CARE</h1>
         <h2>领导关怀</h2>
@@ -265,7 +265,7 @@
         </ul>
       </div>
     </div>
-    <div class="sect6">
+    <div class=" sect sect6">
       <div class="container">
         <div class="port1">
           <img src="__HOME_STATIC__/img/honour.jpg" width="526" alt="">
@@ -276,6 +276,10 @@
             <a href="{:url('about/cert')}"><button  class="readmore">READ MORE <i class="iconfont icon-jiantou1"></i></button></a>
           </div>
         </div>
+      </div>
+    </div>
+    <div class=" sect sect6">
+      <div class="container">
         <div class="port2">
           <div class="text">
             <h1><span>SOCIAL </span>RESPONSIBILITY</h1>
@@ -287,7 +291,7 @@
         </div>
       </div>
     </div>
-    <div class="sect7">
+    <div class=" sect sect7">
       <div class="container">
         <div>
           <object id="player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" name="player" width="450" height="318">
@@ -307,26 +311,26 @@
   <script>
     $(function () {
       // var $contWrap = $('.cont-wrap');
-      var scrollArr = [1095, 2700, 3768, 4706, 5300, 6071]
-      var windowHe = $(window).height();
+      // var scrollArr = [1095, 2700, 3768, 4706, 5300, 6071]
+      // var windowHe = $(window).height();
       var $aArr = $('.sect2 nav a').click(function (e) {
         $(this).addClass('active').siblings('a').removeClass('active');
         var index = $aArr.index($(this))
-
-        $('html,body').animate({
-          scrollTop: scrollArr[index] - windowHe / 2 + 'px'
-        }, 1000);
+        $('.sect').hide().eq(index).show()
+        // $('html,body').animate({
+        //   scrollTop: scrollArr[index] - windowHe / 2 + 'px'
+        // }, 1000);
       })
       // 滚动悬浮
-      window.onscroll = function () {
-        // console.log($(this).scrollTop());
-        var $nav = $('.sect2');
-        if ($(this).scrollTop() >= 922) {
-          $nav.css("position", "fixed");
-        } else {
-          $nav.css("position", "static");
-        }
-      }
+      // window.onscroll = function () {
+      //   // console.log($(this).scrollTop());
+      //   var $nav = $('.sect2');
+      //   if ($(this).scrollTop() >= 922) {
+      //     $nav.css("position", "fixed");
+      //   } else {
+      //     $nav.css("position", "static");
+      //   }
+      // }
       // 发展历程划动
       let selectIdx = 0;
       $('.sect4 .swiper-wrap .right').each(function(index,elem){

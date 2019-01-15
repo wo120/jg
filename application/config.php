@@ -61,7 +61,7 @@ return [
     // 禁止访问模块
     'deny_module_list'       => ['common'],
     // 默认控制器名
-    'default_controller'     => 'Login',
+    'default_controller'     => 'Index',
     // 默认操作名
     'default_action'         => 'index',
     // 默认验证器
@@ -157,7 +157,7 @@ return [
            '__ADMIN_VIEW__' => '/static/admin/html',
            '__ADMIN_DIT__' => '/static/admin/ueditor',
 
-           '__BASE_URL__' => 'http://cc.com'
+           '__BASE_URL__' => 'http://changcheng.gmax1.com'
 
     ],
     // 默认跳转页面对应的模板文件
@@ -258,7 +258,7 @@ return [
     ],
 
     'base_url'=>[
-        'url'=>'http://cc.com'
+        'url'=>'http://changcheng.gmax1.com'
     ],
     'mongodb_yun'=>[
         'type'  =>  '\think\mongo\Connection',
