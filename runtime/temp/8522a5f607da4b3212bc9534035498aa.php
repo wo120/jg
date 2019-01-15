@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:63:"C:\git\project\public/../application/home\view\index\index.html";i:1547523051;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547522090;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:63:"C:\git\project\public/../application/home\view\index\index.html";i:1547537327;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547537221;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="__HOME_CSS__/reset.css">
     <link rel="stylesheet" href="__HOME_CSS__/home.css">
     <title>首页</title>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -26,6 +28,13 @@
                   <a href="<?php echo url('resume/index'); ?>">人力资源</a>
                   <a href="<?php echo url('contact/index'); ?>">联系我们</a>
               </nav>
+              <div class="btn-wrap">
+                    <i class="iconfont icon-Group-"></i>
+                    <div class="lang-switch">
+                        <img src="__HOME_STATIC__/img/eng.png" width="30" height="30" alt="">
+                        <span>En</span>
+                    </div>
+                </div>
             </div>
           </header>
 
@@ -223,8 +232,23 @@
 </footer>
 
 <link rel="stylesheet" href="__HOME_STATIC__/fonts/iconfont.css">
+<script>
+    $(function(){
+        $('header .btn-wrap .lang-switch').click(function(){
+            let href = location.href;
+            if (href.indexOf('changcheng_en') == -1) {
+                href = href.replace('changcheng','changcheng_en')
+            }else{
+                href = href.replace('changcheng_en','changcheng')
+            }
+            location.href = href;
+            
+        })
+    })
+</script>
       </div>
     <!--<script src="../dist/home.js"></script>-->
+
 </body>
 
 </html>

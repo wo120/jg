@@ -14,8 +14,6 @@ class About extends BaseController
     {
         //查询领导关怀
         $leader = Db::table('about')->where('type',1)->select();
-
-
         $this->assign('data',$leader);
 
 
@@ -25,6 +23,20 @@ class About extends BaseController
     //资质证书
     public function cert()
     {
+        $data = Db::table('about')->where('type',2)->select();
+
+        foreach ($data as $k=>$v)
+        {
+            $tmp = $k%2;
+            if($tmp == 0)
+            {
+                $arr['right'][] = $v;
+            }else{
+                $arr['left'][] = $v;
+            }
+        }
+
+        $this->assign('data',$arr);
         return $this->fetch();
     }
     //社会责任

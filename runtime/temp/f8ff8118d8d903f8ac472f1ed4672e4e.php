@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"C:\git\project\public/../application/home\view\product\index.html";i:1547532867;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547522090;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"C:\git\project\public/../application/home\view\product\index.html";i:1547536811;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547537221;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +27,13 @@
                     <a href="<?php echo url('resume/index'); ?>">人力资源</a>
                     <a href="<?php echo url('contact/index'); ?>">联系我们</a>
                 </nav>
+                <div class="btn-wrap">
+                    <i class="iconfont icon-Group-"></i>
+                    <div class="lang-switch">
+                        <img src="__HOME_STATIC__/img/eng.png" width="30" height="30" alt="">
+                        <span>En</span>
+                    </div>
+                </div>
             </div>
         </header>
         <div class="sect1">
@@ -132,8 +139,22 @@
 </footer>
 
 <link rel="stylesheet" href="__HOME_STATIC__/fonts/iconfont.css">
+<script>
+    $(function(){
+        $('header .btn-wrap .lang-switch').click(function(){
+            let href = location.href;
+            if (href.indexOf('changcheng_en') == -1) {
+                href = href.replace('changcheng','changcheng_en')
+            }else{
+                href = href.replace('changcheng_en','changcheng')
+            }
+            location.href = href;
+            
+        })
+    })
+</script>
     </div>
-    
+
 </body>
 
 </html>
