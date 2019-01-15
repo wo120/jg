@@ -238,30 +238,12 @@
         <h1>LEADERSHIP CARE</h1>
         <h2>领导关怀</h2>
         <ul>
+          {volist name="data" id="vo"}
           <li>
-            <img src="__HOME_STATIC__/img/inspection (3).jpg" alt="">
-            <p>国家质检总局执法司副司长来我司调研</p>
+            <img src="__BASE_URL__/{$vo.img}" alt="">
+            <p>{$vo.title}</p>
           </li>
-          <li>
-            <img src="__HOME_STATIC__/img/inspection (1).jpg" alt="">
-            <p>福建省宁德市市长廖小军、温州市委常委、副市长孟建新、瑞安市委书记蒋珍明</p>
-          </li>
-          <li>
-            <img src="__HOME_STATIC__/img/inspection (6).jpg" alt="">
-            <p>省司法厅副厅长来我司视察</p>
-          </li>
-          <li>
-            <img src="__HOME_STATIC__/img/inspection (4).jpg" alt="">
-            <p>国务院参事室主任陈进玉</p>
-          </li>
-          <li>
-            <img src="__HOME_STATIC__/img/inspection (2).jpg" alt="">
-            <p>国家安监总局职业健康司司长</p>
-          </li>
-          <li>
-            <img src="__HOME_STATIC__/img/inspection (5).jpg" alt="">
-            <p>省人大内司委副主任委员钱中贤</p>
-          </li>
+          {/volist}
         </ul>
       </div>
     </div>
@@ -306,6 +288,8 @@
         </div>
       </div>
     </div>
+            <!-- 底部菜单 -->
+        {include file="public/foot"}
   </div>
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
   <script>

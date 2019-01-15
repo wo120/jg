@@ -12,6 +12,13 @@ class About extends BaseController
     //关于长城
     public function index()
     {
+        //查询领导关怀
+        $leader = Db::table('about')->where('type',1)->select();
+
+
+        $this->assign('data',$leader);
+
+
         return $this->fetch();
     }
 

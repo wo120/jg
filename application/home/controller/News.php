@@ -32,7 +32,7 @@ class News extends BaseController
     }
 
     //新闻详情页
-    public function details()
+    public function detail()
     {
         $id   = Request::instance()->get('id');
         $data = Db::table('news')->where('id',$id)->find();

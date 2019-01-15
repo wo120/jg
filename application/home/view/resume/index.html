@@ -91,7 +91,7 @@
         <li class="active">
           <div class="head">
             <span>{$vo.job_name}</span>
-            <a href=""><p>查看详情<i class="iconfont icon-jian" style="color:#fff"></i><i class="iconfont icon-jia1" style="color:#BFBFBF"></i></p></a>
+            <a href="javascript:;"><p>查看详情<i class="iconfont icon-jian" style="color:#fff"></i><i class="iconfont icon-jia1" style="color:#BFBFBF"></i></p></a>
           </div>
           <div class="cont" >
             <div class="top">
@@ -144,11 +144,14 @@
       </ul>
     </div>
   </div>
+    <!-- 底部菜单 -->
+        {include file="public/foot"}
 </div>
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script>
     $(function(){
+        //  
         var $contWrap = $('.cont-wrap');
         var $aArr = $('.sect2 nav a').click(function(e){
             $(this).addClass('active').siblings('a').removeClass('active');
@@ -159,6 +162,13 @@
 
             console.log(e,index);
         })
+        $('.sect4 ul li').each(function(ele,index){
+          $(this).find('.head a').click(function(){
+            console.log(ele,index)
+            $(this).parent().parent().toggleClass('active')
+          })
+        })
+
     })
 </script>
 

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"C:\git\project\public/../application/home\view\about\index.html";i:1547521438;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:63:"C:\git\project\public/../application/home\view\about\index.html";i:1547533888;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547522090;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -239,30 +239,12 @@
         <h1>LEADERSHIP CARE</h1>
         <h2>领导关怀</h2>
         <ul>
+          <?php if(is_array($data) || $data instanceof \think\Collection || $data instanceof \think\Paginator): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
           <li>
-            <img src="__HOME_STATIC__/img/inspection (3).jpg" alt="">
-            <p>国家质检总局执法司副司长来我司调研</p>
+            <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
+            <p><?php echo $vo['title']; ?></p>
           </li>
-          <li>
-            <img src="__HOME_STATIC__/img/inspection (1).jpg" alt="">
-            <p>福建省宁德市市长廖小军、温州市委常委、副市长孟建新、瑞安市委书记蒋珍明</p>
-          </li>
-          <li>
-            <img src="__HOME_STATIC__/img/inspection (6).jpg" alt="">
-            <p>省司法厅副厅长来我司视察</p>
-          </li>
-          <li>
-            <img src="__HOME_STATIC__/img/inspection (4).jpg" alt="">
-            <p>国务院参事室主任陈进玉</p>
-          </li>
-          <li>
-            <img src="__HOME_STATIC__/img/inspection (2).jpg" alt="">
-            <p>国家安监总局职业健康司司长</p>
-          </li>
-          <li>
-            <img src="__HOME_STATIC__/img/inspection (5).jpg" alt="">
-            <p>省人大内司委副主任委员钱中贤</p>
-          </li>
+          <?php endforeach; endif; else: echo "" ;endif; ?>
         </ul>
       </div>
     </div>
@@ -307,6 +289,82 @@
         </div>
       </div>
     </div>
+            <!-- 底部菜单 -->
+        <!-- 底部菜单 -->
+<footer>
+    <div class="container">
+        <img src="__HOME_STATIC__/img/2.png" alt class="logo">
+        <div class="content">
+            <nav>
+                <ul class="active">
+                    <h2>首页</h2>
+                </ul>
+                <ul>
+                    <h2>关于长城</h2>
+                    <li>公司简介</li>
+                    <li>发展历程</li>
+                    <li>领导关怀</li>
+                    <li>资质证书</li>
+                    <li>企业视频</li>
+                    <li>社会责任</li>
+                </ul>
+                <ul>
+                    <h2>产品中心</h2>
+                    <li>汽车工业</li>
+                    <li>家用电器</li>
+                    <li>电动工具</li>
+                    <li>摩托车和电动车</li>
+                    <li>其他产品目录</li>
+                </ul>
+                <ul>
+                    <h2>新闻资讯</h2>
+                    <li>公司新闻</li>
+                    <li>行业讯息</li>
+                    <li>媒体报道</li>
+                </ul>
+                <ul>
+                    <h2>企业文化</h2>
+                    <li>节日活动</li>
+                    <li>公司文化</li>
+                    <li>职工之家</li>
+                    <li>拓展训练</li>
+                    <li>公益活动</li>
+                </ul>
+                <ul>
+                    <h2>人力资源</h2>
+                    <li>人才理念</li>
+                    <li>人才培养</li>
+                    <li>岗位招聘</li>
+                </ul>
+                <ul>
+                    <h2>联系我们</h2>
+                    <li>联系我们</li>
+                    <li>在线留言</li>
+                </ul>
+            </nav>
+            <div class="right">
+                <ul>
+                    <li><i class="iconfont icon-weibo"></i></li>
+                    <li><i class="iconfont icon-weixin"></i></li>
+                    <li><i class="iconfont icon-qq"></i></li>
+                </ul>
+                <p>
+                    浙江长城换向器有限公司<br>
+                    浙江省温州市瑞安市经济开发区经济大道511号
+                    <br>
+                    E-mail:cgw@chinacgw.cn
+                </p>
+            </div>
+            <img src="" alt="" class="qrcode">
+        </div>
+        <span class="copyright">
+                Copyright 2014 浙江长城换向器有限公司 浙ICP备13037331号
+            </span>
+    </div>
+    <div class="bottom"></div>
+</footer>
+
+<link rel="stylesheet" href="__HOME_STATIC__/fonts/iconfont.css">
   </div>
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
   <script>
