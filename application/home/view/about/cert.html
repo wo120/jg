@@ -56,196 +56,233 @@
       <div class="container" style="display: flex">
         <ul>
           {volist name="data.left" id = "vo"}
+            {if $vo.cert_type == '1'}
           <li class="active">
             <div class="bar"><span>{$vo.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
             <div class="pic">
               <img src="__BASE_URL__/{$vo.img}" alt="">
             </div>
           </li>
-          {/volist}
 
+            {/if}
+          {/volist}
         </ul>
         <ul>
           {volist name="data.right" id = "v"}
+            {if $v.cert_type == '1'}
           <li class="">
             <div class="bar"><span>{$v.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
             <div class="pic">
               <img src="__BASE_URL__/{$v.img}" alt="">
             </div>
           </li>
+            {/if}
           {/volist}
 
         </ul>
       </div>
-      <div class="container" style="display: none">
-        <ul>
-          {volist name="data.left" id = "vo"}
-          <li class="active">
-            <div class="bar"><span>{$vo.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/{$vo.img}" alt="">
-            </div>
-          </li>
-          {/volist}
+        <!--省级荣誉-->
+        <div class="container" style="display: none">
+            <ul>
+                {volist name="data.left" id = "vo"}
+                {if $vo.cert_type == '2'}
+                <li class="active">
+                    <div class="bar"><span>{$vo.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/{$vo.img}" alt="">
+                    </div>
+                </li>
+                {/if}
+                {/volist}
+            </ul>
+            <ul>
+                {volist name="data.right" id = "v"}
+                {if $v.cert_type == '2'}
+                <li class="">
+                    <div class="bar"><span>{$v.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/{$v.img}" alt="">
+                    </div>
+                </li>
+                {/if}
+                {/volist}
 
-        </ul>
-        <ul>
-          {volist name="data.right" id = "v"}
-          <li class="">
-            <div class="bar"><span>{$v.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/{$v.img}" alt="">
-            </div>
-          </li>
-          {/volist}
+            </ul>
+        </div>
 
-        </ul>
-      </div>
-      <div class="container" style="display: none">
-        <ul>
-          {volist name="data.left" id = "vo"}
-          <li class="active">
-            <div class="bar"><span>{$vo.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/{$vo.img}" alt="">
-            </div>
-          </li>
-          {/volist}
+        <!--市级荣誉-->
+        <div class="container" style="display: none">
+            <ul>
+                {volist name="data.left" id = "vo"}
+                {if $vo.cert_type == '3'}
+                <li class="active">
+                    <div class="bar"><span>{$vo.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/{$vo.img}" alt="">
+                    </div>
+                </li>
+                {/if}
+                {/volist}
 
-        </ul>
-        <ul>
-          {volist name="data.right" id = "v"}
-          <li class="">
-            <div class="bar"><span>{$v.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/{$v.img}" alt="">
-            </div>
-          </li>
-          {/volist}
+            </ul>
+            <ul>
+                {volist name="data.right" id = "v"}
+                {if $v.cert_type == '3'}
+                <li class="">
+                    <div class="bar"><span>{$v.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/{$v.img}" alt="">
+                    </div>
+                </li>
+                {/if}
+                {/volist}
+            </ul>
+        </div>
+        <!--地级荣誉-->
+        <div class="container" style="display: none">
+            <ul>
+                {volist name="data.left" id = "vo"}
+                {if $vo.cert_type == '4'}
+                <li class="active">
+                    <div class="bar"><span>{$vo.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/{$vo.img}" alt="">
+                    </div>
+                </li>
+                {/if}
+                {/volist}
 
-        </ul>
-      </div>
-      <div class="container" style="display: none">
-        <ul>
-          {volist name="data.left" id = "vo"}
-          <li class="active">
-            <div class="bar"><span>{$vo.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/{$vo.img}" alt="">
-            </div>
-          </li>
-          {/volist}
+            </ul>
+            <ul>
+                {volist name="data.right" id = "v"}
+                {if $v.cert_type == '4'}
+                <li class="">
+                    <div class="bar"><span>{$v.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/{$v.img}" alt="">
+                    </div>
+                </li>
+                {/if}
+                {/volist}
 
-        </ul>
-        <ul>
-          {volist name="data.right" id = "v"}
-          <li class="">
-            <div class="bar"><span>{$v.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/{$v.img}" alt="">
-            </div>
-          </li>
-          {/volist}
+            </ul>
+        </div>
+        <!--5-->
+        <div class="container" style="display: none">
+            <ul>
+                {volist name="data.left" id = "vo"}
+                {if $vo.cert_type == '5'}
+                <li class="active">
+                    <div class="bar"><span>{$vo.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/{$vo.img}" alt="">
+                    </div>
+                </li>
+                {/if}
+                {/volist}
 
-        </ul>
-      </div>
-      <div class="container" style="display: none">
-        <ul>
-          {volist name="data.left" id = "vo"}
-          <li class="active">
-            <div class="bar"><span>{$vo.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/{$vo.img}" alt="">
-            </div>
-          </li>
-          {/volist}
+            </ul>
+            <ul>
+                {volist name="data.right" id = "v"}
+                {if $v.cert_type == '5'}
+                <li class="">
+                    <div class="bar"><span>{$v.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/{$v.img}" alt="">
+                    </div>
+                </li>
+                {/if}
+                {/volist}
 
-        </ul>
-        <ul>
-          {volist name="data.right" id = "v"}
-          <li class="">
-            <div class="bar"><span>{$v.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/{$v.img}" alt="">
-            </div>
-          </li>
-          {/volist}
+            </ul>
+        </div>
+        <!--6-->
+        <div class="container" style="display: none">
+            <ul>
+                {volist name="data.left" id = "vo"}
+                {if $vo.cert_type == '6'}
+                <li class="active">
+                    <div class="bar"><span>{$vo.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/{$vo.img}" alt="">
+                    </div>
+                </li>
+                {/if}
+                {/volist}
 
-        </ul>
-      </div>
-      <div class="container" style="display: none">
-        <ul>
-          {volist name="data.left" id = "vo"}
-          <li class="active">
-            <div class="bar"><span>{$vo.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/{$vo.img}" alt="">
-            </div>
-          </li>
-          {/volist}
+            </ul>
+            <ul>
+                {volist name="data.right" id = "v"}
+                {if $v.cert_type == '6'}
+                <li class="">
+                    <div class="bar"><span>{$v.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/{$v.img}" alt="">
+                    </div>
+                </li>
+                {/if}
+                {/volist}
 
-        </ul>
-        <ul>
-          {volist name="data.right" id = "v"}
-          <li class="">
-            <div class="bar"><span>{$v.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/{$v.img}" alt="">
-            </div>
-          </li>
-          {/volist}
+            </ul>
+        </div>
+        <!--7-->
+        <div class="container" style="display: none">
+            <ul>
+                {volist name="data.left" id = "vo"}
+                {if $vo.cert_type == '7'}
+                <li class="active">
+                    <div class="bar"><span>{$vo.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/{$vo.img}" alt="">
+                    </div>
+                </li>
+                {/if}
+                {/volist}
 
-        </ul>
-      </div>
-      <div class="container" style="display: none">
-        <ul>
-          {volist name="data.left" id = "vo"}
-          <li class="active">
-            <div class="bar"><span>{$vo.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/{$vo.img}" alt="">
-            </div>
-          </li>
-          {/volist}
+            </ul>
+            <ul>
+                {volist name="data.right" id = "v"}
+                {if $v.cert_type == '7'}
+                <li class="">
+                    <div class="bar"><span>{$v.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/{$v.img}" alt="">
+                    </div>
+                </li>
+                {/if}
+                {/volist}
 
-        </ul>
-        <ul>
-          {volist name="data.right" id = "v"}
-          <li class="">
-            <div class="bar"><span>{$v.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/{$v.img}" alt="">
-            </div>
-          </li>
-          {/volist}
+            </ul>
+        </div>
+        <div class="container" style="display: none">
+            <ul>
+                {volist name="data.left" id = "vo"}
+                {if $vo.cert_type == '8'}
+                <li class="active">
+                    <div class="bar"><span>{$vo.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/{$vo.img}" alt="">
+                    </div>
+                </li>
+                {/if}
+                {/volist}
 
-        </ul>
-      </div>
-      <div class="container" style="display: none">
-        <ul>
-          {volist name="data.left" id = "vo"}
-          <li class="active">
-            <div class="bar"><span>{$vo.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/{$vo.img}" alt="">
-            </div>
-          </li>
-          {/volist}
+            </ul>
+            <ul>
+                {volist name="data.right" id = "v"}
+                {if $v.cert_type == '8'}
+                <li class="">
+                    <div class="bar"><span>{$v.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
+                    <div class="pic">
+                        <img src="__BASE_URL__/{$v.img}" alt="">
+                    </div>
+                </li>
+                {/if}
+                {/volist}
 
-        </ul>
-        <ul>
-          {volist name="data.right" id = "v"}
-          <li class="">
-            <div class="bar"><span>{$v.title}</span><img src="__HOME_STATIC__/img/arrow-down.png" alt=""></div>
-            <div class="pic">
-              <img src="__BASE_URL__/{$v.img}" alt="">
-            </div>
-          </li>
-          {/volist}
+            </ul>
+        </div>
 
-        </ul>
-      </div>
->>>>>>> b8ad694cce633ee0b02b5651cb85ed10b39dc19a
     </div>
     <!-- 底部菜单 -->
   </div>

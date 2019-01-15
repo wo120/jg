@@ -24,23 +24,26 @@ class About extends BaseController
     public function cert()
     {
         $data = Db::table('about')->where('type',2)->select();
-
         foreach ($data as $k=>$v)
         {
             $tmp = $k%2;
             if($tmp == 0)
             {
-                $arr['right'][] = $v;
-            }else{
                 $arr['left'][] = $v;
+            }else{
+                $arr['right'][] = $v;
             }
         }
         $this->assign('data',$arr);
+//        dd($arr);
         return $this->fetch();
     }
     //社会责任
     public function social()
     {
+        $data = Db::table('about')->where('type',3)->select();
+        $this->assign('data',$data);
+
         return $this->fetch();
     }
 

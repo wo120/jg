@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\about\add.html";i:1547537213;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\phpstudy\WWW\changcheng\public/../application/admin\view\about\add.html";i:1547541617;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -53,7 +53,7 @@
                 <span class="x-red">*</span>类型
             </label>
             <div class="layui-input-inline">
-                <select name="type" >
+                <select name="type" lay-filter="type">
                     <option value="1"> 领导关怀</option>
                     <option value="2"> 证书管理</option>
                     <option value="3"> 社会责任</option>
@@ -61,16 +61,25 @@
             </div>
         </div>
 
-        <!--活动图片-->
-      <!--<div class="layui-form-item">-->
-                <!--<label for="username" class="layui-form-label">-->
-                    <!--<span class="x-red">*</span>图片-->
-                <!--</label>-->
+    <div class="layui-form  layui-col-md12 x-so layui-hide"  id="address-div">
+        <label for="username" class="layui-form-label">
+            <span class="x-red">*</span>证书类型
+        </label>
+        <div class="layui-input-inline">
+            <select name="cert_type" >
+                <option value="1"> 国家荣誉</option>
+                <option value="2"> 省级荣誉</option>
+                <option value="3"> 市级荣誉</option>
+                <option value="4">地级荣誉</option>
+                <option value="6">体系证书</option>
+                <option value="7">专利证书</option>
+                <option value="8">重合同</option>
+                <option value="9">优秀供应商荣誉</option>
+            </select>
+        </div>
+    </div>
 
-            <!--<button type="button" class="layui-btn" id="test1">-->
-                <!--<i class="layui-icon">&#xe67c;</i>上传图片-->
-            <!--</button>-->
-        <!--</div>-->
+
 
     <div class="layui-form-item">
     <label for="sort" class="layui-form-label">
@@ -151,8 +160,21 @@
             ,layer = layui.layer;
         var upload = layui.upload;
 
+            //监听下拉
+             form.on('select(type)', function(data){
+                 console.log(data.value); //开关是否开启，true或者false
 
-//                        图片容器
+                 if(data.value == 2)
+                 {
+                     $('#address-div').removeClass('layui-hide');
+                 }else {
+                     $('#address-div').addClass('layui-hide');
+                 }
+
+             });
+
+
+//      图片容器
              var $imgWrap = $('#img-wrap');
              var base_url = "__BASE_URL__";
              //文件上传

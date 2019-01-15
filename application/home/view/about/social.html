@@ -52,18 +52,12 @@
         <div class="sect3">
             <div class="container">
                 <ul>
+                    {volist name='data' id='vo'}
                     <li>
-                        <img src="__HOME_STATIC__/img/bayi.jpg" alt="">
-                        <h1>董事长捐款慈善</h1>
+                        <img src="__BASE_URL__/{$vo.img}" alt="">
+                        <h1>{$vo.title}</h1>
                     </li>
-                    <li>
-                        <img src="__HOME_STATIC__/img/bayi.jpg" alt="">
-                        <h1>董事长捐款慈善</h1>
-                    </li>
-                    <li>
-                        <img src="__HOME_STATIC__/img/bayi.jpg" alt="">
-                        <h1>董事长捐款慈善</h1>
-                    </li>
+                    {/volist}
                 </ul>
             </div>
         </div>

@@ -70,8 +70,6 @@
             <div class="container">
                 <div class="select">
                     <ul>
-                        <!--<li>2018年</li>-->
-
                         <li>
                             <select id="year">
                                 <option value="">--选择年份--</option>
@@ -80,9 +78,8 @@
                                 {/volist}
                             </select>
                         </li>
+                    </ul>
 
-<<<<<<< HEAD
-                            </ul>
                             <div class="arrow">
                               <img src="__HOME_STATIC__/img/arrow-down.png" alt="">
                             </div>
@@ -99,52 +96,6 @@
                             {/volist}
                         </ul>
                     </div>
-                    <div class="container2">
-                        <ul class="news">
-                            {volist name='cc' id='c'}
-                            <li>
-                                <a href="{:url('news/detail')}?id={$c.id}"> <img src="__BASE_URL__/{$c.index_img}" alt=""></a>
-                                <div class="text">
-                                    <h1>{$c.nper}</h1>
-                                    <h2>{$c.time}</h2>
-                                </div>
-                            </li>
-                            {/volist}
-                        </ul>
-=======
-                    </ul>
-                    <div class="arrow">
-                        <img src="__HOME_STATIC__/img/arrow-down.png" alt="">
->>>>>>> b8ad694cce633ee0b02b5651cb85ed10b39dc19a
-                    </div>
-                </div>
-                <ul class="news">
-                    {volist name='cc' id='c'}
-                    <li>
-                        <img src="__BASE_URL__/{$c.index_img}" alt="">
-                        <div class="text">
-                            <h1>{$c.nper}</h1>
-                            <h2>{$c.time}</h2>
-                        </div>
-                    </li>
-                    {/volist}
-                    <!---->
-                    <!--<li>-->
-                    <!--<img src="__HOME_STATIC__/img/ribao.png" alt="">-->
-                    <!--<div class="text">-->
-                    <!--<h1>2017年24期</h1>-->
-                    <!--<h2>2018-08-08</h2>-->
-                    <!--</div>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                    <!--<img src="__HOME_STATIC__/img/ribao.png" alt="">-->
-                    <!--<div class="text">-->
-                    <!--<h1>2017年24期</h1>-->
-                    <!--<h2>2018-08-08</h2>-->
-                    <!--</div>-->
-                    <!--</li>-->
-                    <!---->
-                </ul>
             </div>
         </div>
         <!-- 底部菜单 -->

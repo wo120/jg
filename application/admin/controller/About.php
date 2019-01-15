@@ -107,11 +107,13 @@ class About extends BaseController
         $title      = $tmp_data['title'];
         $title_en   = $tmp_data['title_en'];
         $sort       = $tmp_data['sort'];
+        if(!empty($tmp_data['cert_type'])){
+            $cert_type = $tmp_data['cert_type'];
+            $arr = compact('type','img','title','title_en','sort','cert_type');
+        }else{
+            $arr = compact('type','img','title','title_en','sort');
+        }
 
-
-
-
-        $arr = compact('type','img','title','title_en','sort');
         $res = Db::table('about')->insert($arr);
 
         return $res?1:0;
