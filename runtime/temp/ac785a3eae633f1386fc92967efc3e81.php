@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"C:\git\project\public/../application/home\view\culture\index.html";i:1547536809;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547537221;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"C:\git\project\public/../application/home\view\culture\index.html";i:1547552502;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547537221;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="__HOME_CSS__/reset.css">
     <link rel="stylesheet" href="__HOME_CSS__/buzCulture.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
     <title>企业文化</title>
 </head>
 
@@ -53,15 +55,67 @@
         <div class="sect2">
             <div class="container">
                 <nav>
-                    <a href class="active">节日活动</a>
-                    <a href>公司文化</a>
-                    <a href>职工之家</a>
-                    <a href>拓展训练</a>
-                    <a href>工艺活动</a>
+                    <a href="javascript:;" class="active">节日活动</a>
+                    <a href="javascript:;">公司文化</a>
+                    <a href="javascript:;">职工之家</a>
+                    <a href="javascript:;">拓展训练</a>
+                    <a href="javascript:;">工艺活动</a>
                 </nav>
             </div>
         </div>
-        <div class="sect3">
+        <div class="sect3" style="display: block">
+            <div class="container">
+                <h1>FESTIVAL <span>EVENT</span></h1>
+                <p>节日活动</p>
+                <ul>
+                    <?php if(is_array($act) || $act instanceof \think\Collection || $act instanceof \think\Paginator): $i = 0; $__LIST__ = $act;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+                    <li>
+                        <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
+                    </li>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </ul>
+            </div>
+        </div>
+        <div class="sect3" style="display: none">
+            <div class="container">
+                <h1>FESTIVAL <span>EVENT</span></h1>
+                <p>节日活动</p>
+                <ul>
+                    <?php if(is_array($act) || $act instanceof \think\Collection || $act instanceof \think\Paginator): $i = 0; $__LIST__ = $act;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+                    <li>
+                        <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
+                    </li>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </ul>
+            </div>
+        </div>
+        <div class="sect3" style="display: none">
+            <div class="container">
+                <h1>FESTIVAL <span>EVENT</span></h1>
+                <p>节日活动</p>
+                <ul>
+                    <?php if(is_array($act) || $act instanceof \think\Collection || $act instanceof \think\Paginator): $i = 0; $__LIST__ = $act;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+                    <li>
+                        <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
+                    </li>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </ul>
+            </div>
+        </div>
+        <div class="sect3" style="display: none">
+            <div class="container">
+                <h1>FESTIVAL <span>EVENT</span></h1>
+                <p>节日活动</p>
+                <ul>
+                    <?php if(is_array($act) || $act instanceof \think\Collection || $act instanceof \think\Paginator): $i = 0; $__LIST__ = $act;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+                    <li>
+                        <img src="__BASE_URL__/<?php echo $v['img']; ?>" alt="">
+                    </li>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </ul>
+            </div>
+        </div>
+        <div class="sect3" style="display: none">
             <div class="container">
                 <h1>FESTIVAL <span>EVENT</span></h1>
                 <p>节日活动</p>
@@ -164,7 +218,19 @@
         })
     })
 </script>
+
     </div>
+    <script>
+        $(function () {
+            var $aArr = $('.sect2 nav a').click(function () {
+                let index  = $aArr.index($(this));
+                $aArr.removeClass('active')
+                $(this).toggleClass('active')
+                $('.sect3').hide().eq(index).show();
+
+            })
+        });
+    </script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:63:"C:\git\project\public/../application/home\view\about\index.html";i:1547538901;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547537221;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:63:"C:\git\project\public/../application/home\view\about\index.html";i:1547541145;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547537221;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -3,8 +3,8 @@ body {
 }
 
 .sect1 {
-    background: url("../static/img/home-bg.jpg") no-repeat top center;
-    height: 922px;
+    background: url("../static/img/home-bg.png") no-repeat top center;
+    height: 820px;
 }
 
 .sect1 .cont {

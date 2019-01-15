@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"C:\git\project\public/../application/home\view\product\index.html";i:1547536811;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547537221;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"C:\git\project\public/../application/home\view\product\index.html";i:1547542609;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547537221;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
     <title>新闻</title>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -44,10 +46,10 @@
                     <h2>产品中心</h2>
                 </div>
                 <div class="fun-wrap">
-                    <i>
+                    <i onclick="mySwiper.slidePrev();">
                         <img src="__HOME_STATIC__/img/arrow.png" style="transform:rotate(180deg)" alt>
                     </i>
-                    <i style="margin-left:50px">
+                    <i style="margin-left:50px" onclick="mySwiper.slideNext();">
                         <img src="__HOME_STATIC__/img/arrow.png" alt>
                     </i>
                 </div>
@@ -59,8 +61,21 @@
             </div>
         </div>
         <div class="sect3">
-            <div class="container">
-                <img src="__HOME_STATIC__/img/goodsImg/电动工具.jpg" alt="">
+            <!-- <div class="">
+            </div> -->
+            <div class="container swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="__HOME_STATIC__/img/goodsImg/电动工具.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="__HOME_STATIC__/img/goodsImg/电动工具.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="__HOME_STATIC__/img/goodsImg/电动工具.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
         <!-- 底部菜单 -->
@@ -154,6 +169,13 @@
     })
 </script>
     </div>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: 5000,//可选选项，自动滑动,
+            loop:true,
+            pagination : '.swiper-pagination',
+        })
+    </script>
 
 </body>
 

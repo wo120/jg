@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:64:"C:\git\project\public/../application/home\view\about\social.html";i:1547522569;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547522090;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:64:"C:\git\project\public/../application/home\view\about\social.html";i:1547551363;s:63:"C:\git\project\public/../application/home\view\public\foot.html";i:1547537221;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,56 +12,57 @@
 </head>
 
 <body>
-<div class="box">
-    <header>
-        <div class="container">
-            <img src="__HOME_STATIC__/img/2.png" alt class="logo">
-            <nav>
-                <a href="<?php echo url('index/index'); ?>">首页</a>
-                <a href="<?php echo url('about/index'); ?>" class="active">关于长城</a>
-                <a href="<?php echo url('product/index'); ?>">产品中心</a>
-                <a href="<?php echo url('news/index'); ?>">新闻资讯</a>
-                <a href="<?php echo url('culture/index'); ?>">企业文化</a>
-                <a href="<?php echo url('resume/index'); ?>">人力资源</a>
-                <a href="<?php echo url('contact/index'); ?>">联系我们</a>
-            </nav>
+    <div class="box">
+        <header>
+            <div class="container">
+                <img src="__HOME_STATIC__/img/2.png" alt class="logo">
+                <nav>
+                    <a href="<?php echo url('index/index'); ?>">首页</a>
+                    <a href="<?php echo url('about/index'); ?>" class="active">关于长城</a>
+                    <a href="<?php echo url('product/index'); ?>">产品中心</a>
+                    <a href="<?php echo url('news/index'); ?>">新闻资讯</a>
+                    <a href="<?php echo url('culture/index'); ?>">企业文化</a>
+                    <a href="<?php echo url('resume/index'); ?>">人力资源</a>
+                    <a href="<?php echo url('contact/index'); ?>">联系我们</a>
+                </nav>
+                <div class="btn-wrap">
+                        <i class="iconfont icon-Group-"></i>
+                        <div class="lang-switch">
+                            <img src="__HOME_STATIC__/img/eng.png" width="30" height="30" alt="">
+                            <span>En</span>
+                        </div>
+                    </div>
+            </div>
+        </header>
+        <div class="sect1">
+            <div class="container">
+                <img src="__HOME_STATIC__/img/responsible.png" width="1200" height="630" alt>
+            </div>
         </div>
-    </header>
-    <div class="sect1">
-        <div class="container">
-            <img src="__HOME_STATIC__/img/responsible.png" width="1200" height="630" alt>
+        <div class="sect2">
+            <div class="container">
+                <h1>社会责任</h1>
+                <h2>SOCIAL RESPONSIBILITY</h2>
+                <p>长城换向器创立以来一直致力于社会责任和企业发展紧密联系在一起，
+                    <br>这体现了长城人的远大抱负和高度使命，这离不开党的改革开放路线，
+                    <br>离不开社会各界的鼎力支持，
+                    <br>用心付出，责任至上。
+                </p>
+            </div>
         </div>
-    </div>
-    <div class="sect2">
-        <div class="container">
-            <h1>社会责任</h1>
-            <h2>SOCIAL RESPONSIBILITY</h2>
-            <p>长城换向器创立以来一直致力于社会责任和企业发展紧密联系在一起，
-                <br>这体现了长城人的远大抱负和高度使命，这离不开党的改革开放路线，
-                <br>离不开社会各界的鼎力支持，
-                <br>用心付出，责任至上。
-            </p>
+        <div class="sect3">
+            <div class="container">
+                <ul>
+                    <?php if(is_array($data) || $data instanceof \think\Collection || $data instanceof \think\Paginator): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                    <li>
+                        <img src="__BASE_URL__/<?php echo $vo['img']; ?>" alt="">
+                        <h1><?php echo $vo['title']; ?></h1>
+                    </li>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="sect3">
-        <div class="container">
-            <ul>
-                <li>
-                    <img src="__HOME_STATIC__/img/bayi.jpg" alt="">
-                    <h1>董事长捐款慈善</h1>
-                </li>
-                <li>
-                    <img src="__HOME_STATIC__/img/bayi.jpg" alt="">
-                    <h1>董事长捐款慈善</h1>
-                </li>
-                <li>
-                    <img src="__HOME_STATIC__/img/bayi.jpg" alt="">
-                    <h1>董事长捐款慈善</h1>
-                </li>
-            </ul>
-        </div>
-    </div>
-         <!-- 底部菜单 -->
+        <!-- 底部菜单 -->
         <!-- 底部菜单 -->
 <footer>
     <div class="container">
@@ -137,7 +138,21 @@
 </footer>
 
 <link rel="stylesheet" href="__HOME_STATIC__/fonts/iconfont.css">
-</div>
+<script>
+    $(function(){
+        $('header .btn-wrap .lang-switch').click(function(){
+            let href = location.href;
+            if (href.indexOf('changcheng_en') == -1) {
+                href = href.replace('changcheng','changcheng_en')
+            }else{
+                href = href.replace('changcheng_en','changcheng')
+            }
+            location.href = href;
+            
+        })
+    })
+</script>
+    </div>
 </body>
 
 </html>
